@@ -44,6 +44,7 @@ setInterval(async function(){
    
 fs.writeFileSync(nextthousand.toString()  + '/' + counter.toString() + '.json', JSON.stringify(config))
    }
+   nextthousand = maybe 
      let ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
 
             if (error) {
