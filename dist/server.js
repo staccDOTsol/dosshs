@@ -63,7 +63,7 @@ ls = exec('solana address -k ' + (nextthousand).toString() + '.json', function (
   }
   console.log('Child Process STDOUT: ' + stdout);
     nextseed = stdout
-    winning = {winning: winning.winning, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand, s: Math.ceil(new Date().getTime() / 1000)}
+    winning = {winning: winning.winning, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand, s: Math.ceil(new Date().getTime() / 1000 / 1000)}
     console.log(stdout)
     console.log(stdout)
     console.log(stdout)
@@ -225,7 +225,7 @@ fs.writeFileSync(nextthousand.toString()  + '/' + counter.toString() + '.json', 
             }
             console.log('Child Process STDOUT: ' + stdout);
               nextseed = stdout
-              winning = {winning: winning.winning, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand, s: Math.ceil(new Date().getTime() / 1000)}
+              winning = {winning: winning.winning, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand, s: Math.ceil(new Date().getTime() / 1000 / 1000)}
               console.log(stdout)
               console.log(stdout)
               console.log(stdout)
@@ -337,7 +337,7 @@ ls.on('exit', function (code) {
 })          });
 
     }    
-    winning = {"winning": winning.winning, "lastplay": winning.lastplay, nextseed, nextthousand, s: Math.ceil(new Date().getTime() / 1000) }
+    winning = {"winning": winning.winning, "lastplay": winning.lastplay, nextseed, nextthousand, s: Math.ceil(new Date().getTime() / 1000 / 1000) }
 
 } catch (err){
     console.log(err)
@@ -378,7 +378,7 @@ app.post(
     console.log(nextseed)
     console.log(nextseed)
     console.log(nextseed)
-    winning = {"winning": config.oracleState.tokenTransfers[0].from, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand, s: Math.ceil(new Date().getTime() / 1000) }//
+    winning = {"winning": config.oracleState.tokenTransfers[0].from, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand, s: Math.ceil(new Date().getTime() / 1000 / 1000) }//
     config.oracleState.finalized = true
   configs.push(config)
 counter++;
