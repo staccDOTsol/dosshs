@@ -376,14 +376,11 @@ app.post(
   (req, res) { 
     try {
     let config = (req.body) 
-    console.log(nextseed)
-    console.log(nextseed)
-    console.log(nextseed)
-    console.log(nextseed)
     winning = {"winning": config.oracleState.tokenTransfers[0].from, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand, s: Math.ceil(new Date().getTime() / 1000 / 1000) }//
     config.oracleState.finalized = true
   configs.push(config)
-counter++;
+  console.log(configs.length )
+
 }
 catch (err){
     console.log(err)
