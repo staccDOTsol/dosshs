@@ -156,7 +156,7 @@ ls = exec("echo '" + JSON.stringify({
       
       ls.on('exit', function (code) {
         console.log('Child process exited with exit code ' + code);
-    
+    try {
   ls = exec('sh do2.sh ' + (nextthousand).toString() + 'm.json ' + (nextthousand).toString() +'ma.json' , function (error, stdout, stderr) {
     if (error) {
       console.log(error.stack);
@@ -170,7 +170,10 @@ ls = exec("echo '" + JSON.stringify({
   ls.on('exit', function (code) {
     console.log('Child process exited with exit code ' + code);
     nextthousand = maybe 
-  });
+  }); }
+   catch (err){
+    
+   }
 });   });   } catch (err){}}); });
           
 ls.on('exit', function (code) {
