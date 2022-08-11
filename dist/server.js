@@ -385,7 +385,6 @@ app.post(
 catch (err){
     console.log(err)
 }
-res.json(winning)
   }
 )
 
