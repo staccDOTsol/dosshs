@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "npm i -g ts-node raindrops-cli && rm -rf 16*",
+    "clean": "rm -rf 16*",
+    "build": "yarn clean && npm i -g ts-node raindrops-cli",
     "start": "node dist/server.js"
   },
   "dependencies": {

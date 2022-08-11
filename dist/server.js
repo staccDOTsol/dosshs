@@ -28,6 +28,149 @@ fs.mkdirSync(nextthousand.toString())
 } catch (err){}
 let first = true
 console.log(nextthousand)
+let ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
+
+  if (error) {
+    console.log(error.stack);
+    console.log('Error code: ' + error.code);
+    console.log('Signal received: ' + error.signal);
+  }
+  console.log('Child Process STDOUT: ' + stdout);
+  console.log('Child Process STDERR: ' + stderr);
+});
+
+ls.on('exit', function (code) {
+  console.log('Child process exited with exit code ' + code);
+
+ls = exec('solana address -k ' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
+  if (error) {
+    console.log(error.stack);
+    console.log('Error code: ' + error.code);
+    console.log('Signal received: ' + error.signal);
+  }
+  console.log('Child Process STDOUT: ' + stdout);
+  console.log('Child Process STDERR: ' + stderr);
+});
+
+ls.on('exit', function (code) {
+  console.log('Child process exited with exit code ' + code);
+ls = exec('solana address -k ' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
+
+  if (error) {
+    console.log(error.stack);
+    console.log('Error code: ' + error.code);
+    console.log('Signal received: ' + error.signal);
+  }
+  console.log('Child Process STDOUT: ' + stdout);
+    nextseed = stdout
+    winning = {winning: winning.winning, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand}
+    console.log(stdout)
+    console.log(stdout)
+    console.log(stdout)
+    console.log(stdout)
+
+  console.log('Child Process STDERR: ' + stderr);
+try {
+ls = exec("echo '" + JSON.stringify({
+"winOracle": null,
+"matchState": { "initialized": true },
+"winOracleCooldown": 0,
+"space": 300,
+"minimumAllowedEntryTime": null,
+"tokenEntryValidation": null,
+"authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
+"leaveAllowed": true,
+"joinAllowedDuringStart": true,
+"oracleState": {
+"seed": nextseed.replace('\n',''),
+"authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
+"finalized": false,
+"tokenTransferRoot": null,
+"tokenTransfers": [ ]
+},
+"tokensToJoin": [
+{
+"mint": "7Ti7cweodcPBcGEXVAJnu2CsY3zCXrKChTbUEqUgSiKi",
+"amount": 13800,
+"sourceType": 1,
+"index": 0,
+"validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
+}
+]
+}) + "' >> " +  (nextthousand).toString() + 'm.json', function (error, stdout, stderr) {
+
+if (error) {
+console.log(error.stack);
+console.log('Error code: ' + error.code);
+console.log('Signal received: ' + error.signal);
+}
+console.log('Child Process STDOUT: ' + stdout);
+console.log('Child Process STDERR: ' + stderr);
+});
+
+ls.on('exit', function (code) {
+console.log('Child process exited with exit code ' + code);
+
+ls = exec("echo '" + JSON.stringify({
+"winOracle": null,
+"matchState": { "started": true },
+"winOracleCooldown": 0,
+"space": 300,
+"minimumAllowedEntryTime": null,
+"tokenEntryValidation": null,
+"authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
+"leaveAllowed": true,
+"joinAllowedDuringStart": true,
+"oracleState": {
+"seed": nextseed.replace('\n',''),
+"authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
+"finalized": false,
+"tokenTransferRoot": null,
+"tokenTransfers": [ ]
+},
+"tokensToJoin": [
+{
+  "mint": "7Ti7cweodcPBcGEXVAJnu2CsY3zCXrKChTbUEqUgSiKi",
+  "amount": 13800,
+  "sourceType": 1,
+  "index": 0,
+  "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
+}
+]
+}) + "' >> " +  (nextthousand).toString() + 'ma.json', function (error, stdout, stderr) {
+
+if (error) {
+console.log(error.stack);
+console.log('Error code: ' + error.code);
+console.log('Signal received: ' + error.signal);
+}
+console.log('Child Process STDOUT: ' + stdout);
+console.log('Child Process STDERR: ' + stderr);
+});
+
+ls.on('exit', function (code) {
+console.log('Child process exited with exit code ' + code);
+try {
+ls = exec('sh do2.sh ' + (nextthousand).toString() + 'm.json ' + (nextthousand).toString() +'ma.json' , function (error, stdout, stderr) {
+if (error) {
+console.log(error.stack);
+console.log('Error code: ' + error.code);
+console.log('Signal received: ' + error.signal);
+}
+console.log('Child Process STDOUT: ' + stdout);
+console.log('Child Process STDERR: ' + stderr);
+});
+
+ls.on('exit', function (code) {
+console.log('Child process exited with exit code ' + code);
+nextthousand = maybe 
+}); }
+catch (err){
+
+}
+})
+})} catch (err){}})})})
+
 setInterval(async function(){
     try {
     maybe = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
@@ -214,7 +357,7 @@ try {
   })
 }
  catch (err){}
-}, 1000)
+}, 60 * 1000)
 app.use(express.json())
 app.get(
   '/stuff',
