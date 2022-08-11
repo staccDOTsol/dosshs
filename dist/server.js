@@ -163,6 +163,8 @@ console.log('Child Process STDERR: ' + stderr);
 
 ls.on('exit', function (code) {
 console.log('Child process exited with exit code ' + code);
+
+maybe = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
 nextthousand = maybe 
 }); }
 catch (err){
