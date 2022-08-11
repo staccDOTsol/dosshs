@@ -178,6 +178,7 @@ setInterval(async function(){
     maybe = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
     if (maybe > nextthousand || first){
         first = false
+        counter = 0
    for (var config of configs){
     let haha = Math.random() 
     config.oracleState.tokenTransfers[0].to = winners.winning 
@@ -185,10 +186,11 @@ setInterval(async function(){
       config.oracleState.tokenTransfers[0].to = "4DevNqTkqssc177AhRjKJV2692VhGhb137U38camFUq9"
     }
 
-
-   
+console.log(counter)
+   counter++
 fs.writeFileSync(nextthousand.toString()  + '/' + counter.toString() + '.json', JSON.stringify(config))
    }
+   configs = []
    nextthousand = maybe 
      let ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
 
