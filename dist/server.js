@@ -176,8 +176,8 @@ catch (err){
 setInterval(async function(){
     try {
     maybe = (Math.ceil(new Date().getTime() / 1000 / 60 / 60)) 
-    if (maybe > nextthousand || first){
-        first = false
+    if (maybe > nextthousand ){
+        first
         counter = 0
    for (var config of configs){
     let haha = Math.random() 
@@ -387,6 +387,7 @@ catch (err){
 }
   }
 )
+
 
 console.log(nextthousand)
 const PORT = process.env.PORT || 3000
