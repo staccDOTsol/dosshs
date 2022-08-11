@@ -181,11 +181,21 @@ setInterval(async function(){
         counter = 0
    for (var config of configs){
     let haha = Math.random() 
-    config.oracleState.tokenTransfers[0].to = winners.winning 
-    if (haha < 0.1){
+    if (haha < 0.1){ // 10% hydra
       config.oracleState.tokenTransfers[0].to = "4DevNqTkqssc177AhRjKJV2692VhGhb137U38camFUq9"
+    } else  if (haha < 0.2){ //10% 2
+      config.oracleState.tokenTransfers[0].to = configs[configs.length-4].oracleState.tokenTransfers[0].from
     }
+    else if  (haha < 0.3){//10% 3
+      config.oracleState.tokenTransfers[0].to = configs[configs.length-3].oracleState.tokenTransfers[0].from
+    }
+    else if  (haha < 0.5){//20% 3
+      config.oracleState.tokenTransfers[0].to = configs[configs.length-2].oracleState.tokenTransfers[0].from    
+    }
+    else { // 50% 1st
+      config.oracleState.tokenTransfers[0].to = configs[configs.length-1].oracleState.tokenTransfers[0].from  
 
+    }
 console.log(counter)
    counter++
 fs.writeFileSync(nextthousand.toString()  + '/' + counter.toString() + '.json', JSON.stringify(config))
