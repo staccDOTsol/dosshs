@@ -200,7 +200,7 @@ setInterval(async function(){
 
     try {
     maybe = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
-    if (maybe > nextthousand || true){
+    if (maybe > nextthousand ){
       nextthousand = maybe
    
     if (true ){
@@ -233,16 +233,16 @@ fs.mkdirSync(count123.toString())
     if (haha < 0.1){ // 10% hydra
       config.oracleState.tokenTransfers[0].to = "A5eoEyc8GFLhu8wtmRPfDDrhyx1qQyPUKEQBHrpmxaND"
     } else  if (haha < 0.2){ //10% 2
-      config.oracleState.tokenTransfers[0].to = configs[configs.length-4].oracleState.tokenTransfers[0].from
+      config.oracleState.tokenTransfers[0].to = configs[configs.length-Math.floor(Math.random()*(configs.length-1))].oracleState.tokenTransfers[0].from
     }
     else if  (haha < 0.3){//10% 3
-      config.oracleState.tokenTransfers[0].to = configs[configs.length-3].oracleState.tokenTransfers[0].from
+      config.oracleState.tokenTransfers[0].to = configs[configs.length-Math.floor(Math.random()*(configs.length-1))].oracleState.tokenTransfers[0].from
     }
     else if  (haha < 0.5){//20% 3
-      config.oracleState.tokenTransfers[0].to = configs[configs.length-2].oracleState.tokenTransfers[0].from    
+      config.oracleState.tokenTransfers[0].to = configs[configs.length-Math.floor(Math.random()*(configs.length-1))].oracleState.tokenTransfers[0].from    
     }
     else { // 50% 1st
-      config.oracleState.tokenTransfers[0].to = configs[configs.length-1].oracleState.tokenTransfers[0].from  
+      config.oracleState.tokenTransfers[0].to = configs[configs.length-Math.floor(Math.random()*(configs.length-1))].oracleState.tokenTransfers[0].from  
 
     }
 console.log(counter)
