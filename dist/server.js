@@ -273,8 +273,9 @@ for (var iii in configs){
   ls.on('exit', function (code) {
    console.log('Child process exited with exit code ' + code);
   })
+  console.log(1231231231223)
 } catch (err){
-  
+
 }
 })
   
