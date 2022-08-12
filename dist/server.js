@@ -65,7 +65,7 @@ var ls =  exec('solana address -k ' + count123.toString() + '.json', function (e
   }
   console.log('Child Process STDOUT: ' + stdout);
     nextseed = stdout
-    winning = {winning: winning.winning, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand:  Math.ceil(new Date().getTime() / 1000 / 1000), s: Math.floor(new Date().getTime() / 1000 / 1000)}
+    winning = {winning: winning.winning, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand:  Math.ceil(new Date().getTime() / 1000 / 1000), s: (new Date().getTime())}
     console.log(stdout)
     console.log(stdout)
     console.log(stdout)
@@ -175,8 +175,12 @@ catch (err){
 })} catch (err){}})})})
 
 setInterval(async function(){
+
     try {
     maybe = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
+    if (maybe > nextthousand){
+      nextthousand = maybe
+   
     if (true ){
       count123++
 fs.mkdirSync(count123.toString())
@@ -342,7 +346,7 @@ console.log(counter)
             }
             console.log('Child Process STDOUT: ' + stdout);
               nextseed = stdout
-              winning = {winning: winning.winning, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand:  Math.ceil(new Date().getTime() / 1000 / 1000), s: Math.floor(new Date().getTime() / 1000 / 1000)}
+              winning = {winning: winning.winning, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand:  Math.ceil(new Date().getTime() / 1000 / 1000), s: (new Date().getTime())}
               console.log(stdout)
               console.log(stdout)
               console.log(stdout)
@@ -453,8 +457,8 @@ ls.on('exit', function (code) {
 })          });
 
     }    
-    winning = {"winning": winning.winning, "lastplay": winning.lastplay, nextseed, nextthousand:  Math.ceil(new Date().getTime() / 1000 / 1000), s: Math.floor(new Date().getTime() / 1000 / 1000) }
-
+    winning = {"winning": winning.winning, "lastplay": winning.lastplay, nextseed, nextthousand:  Math.ceil(new Date().getTime() / 1000 / 1000), s: (new Date().getTime())}
+  }
 } catch (err){
     console.log(err)
 }
@@ -474,7 +478,7 @@ app.post(
   (req, res) { 
     try {
     let config = (req.body) 
-    winning = {"winning": config.oracleState.tokenTransfers[0].from, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand:  Math.ceil(new Date().getTime() / 1000 / 1000), s: Math.floor(new Date().getTime() / 1000 / 1000) }//
+    winning = {"winning": config.oracleState.tokenTransfers[0].from, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand:  Math.ceil(new Date().getTime() / 1000 / 1000), s: (new Date().getTime()) }//
    // config.oracleState.finalized = true
   configs.push(config)
   console.log(configs.length )
