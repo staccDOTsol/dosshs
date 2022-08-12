@@ -55,7 +55,7 @@ var ls = exec('solana address -k ' + counter123.toString() + 'k.json', function 
 
 ls.on('exit', function (code) {
   console.log('Child process exited with exit code ' + code);
-var ls = exec('solana address -k ' + counter123.toString() + '.json', function (error, stdout, stderr) {
+var ls = exec('solana address -k ' + counter123.toString() + 'k.json', function (error, stdout, stderr) {
 
   if (error) {
     console.log(error.stack);
@@ -301,7 +301,7 @@ console.log(counter)
   })
   
    configs = []
-     var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + counter123.toString() + '.json', function (error, stdout, stderr) {
+     var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + counter123.toString() + 'k.json', function (error, stdout, stderr) {
 
             if (error) {
               console.log(error.stack);
@@ -315,7 +315,7 @@ console.log(counter)
           ls.on('exit', function (code) {
             console.log('Child process exited with exit code ' + code);
        
-          var ls = exec('solana address -k ' + counter123.toString() + '.json', function (error, stdout, stderr) {
+          var ls = exec('solana address -k ' + counter123.toString() + 'k.json', function (error, stdout, stderr) {
             if (error) {
               console.log(error.stack);
               console.log('Error code: ' + error.code);
