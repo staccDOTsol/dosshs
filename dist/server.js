@@ -22,15 +22,16 @@ setInterval(async function(){
 let counter = 0;
 var jsonParser = bodyParser.json()
 var nextseed  
+var count123 = 0
 let nextthousand = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
 try {
-fs.mkdirSync(nextthousand.toString())
+fs.mkdirSync(count123.toString())
 } catch (err){}try {
-  fs.mkdirSync((nextthousand + 1).toString())
+  fs.mkdirSync((count123 + 1).toString())
   } catch (err){}
 let first = true
-console.log(nextthousand)
-var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
+console.log(count123)
+var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + counter123.toString()() + '.json', function (error, stdout, stderr) {
 
   if (error) {
     console.log(error.stack);
@@ -44,7 +45,7 @@ var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + (nextthou
 ls.on('exit', function (code) {
   console.log('Child process exited with exit code ' + code);
 
-var ls = exec('solana address -k ' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
+var ls = exec('solana address -k ' + counter123.toString()() + '.json', function (error, stdout, stderr) {
   if (error) {
     console.log(error.stack);
     console.log('Error code: ' + error.code);
@@ -56,7 +57,7 @@ var ls = exec('solana address -k ' + (nextthousand).toString() + '.json', functi
 
 ls.on('exit', function (code) {
   console.log('Child process exited with exit code ' + code);
-var ls = exec('solana address -k ' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
+var ls = exec('solana address -k ' + counter123.toString()() + '.json', function (error, stdout, stderr) {
 
   if (error) {
     console.log(error.stack);
@@ -65,7 +66,7 @@ var ls = exec('solana address -k ' + (nextthousand).toString() + '.json', functi
   }
   console.log('Child Process STDOUT: ' + stdout);
     nextseed = stdout
-    winning = {winning: winning.winning, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand, s: Math.ceil(new Date().getTime() / 1000 / 1000)}
+    winning = {winning: winning.winning, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand:  Math.ceil(new Date().getTime() / 1000 / 1000), s: Math.ceil(new Date().getTime() / 1000 / 1000)}
     console.log(stdout)
     console.log(stdout)
     console.log(stdout)
@@ -99,7 +100,7 @@ var ls = exec("echo '" + JSON.stringify({
 "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
 }
 ]
-}) + "' >> " +  (nextthousand).toString() + 'm.json', function (error, stdout, stderr) {
+}) + "' >> " +  counter123.toString()() + 'm.json', function (error, stdout, stderr) {
 
 if (error) {
 console.log(error.stack);
@@ -139,7 +140,7 @@ var ls = exec("echo '" + JSON.stringify({
   "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
 }
 ]
-}) + "' >> " +  (nextthousand).toString() + 'ma.json', function (error, stdout, stderr) {
+}) + "' >> " +  counter123.toString()() + 'ma.json', function (error, stdout, stderr) {
 
 if (error) {
 console.log(error.stack);
@@ -153,7 +154,7 @@ console.log('Child Process STDERR: ' + stderr);
 ls.on('exit', function (code) {
 console.log('Child process exited with exit code ' + code);
 try {
-var ls = exec('sh do2.sh ' + (nextthousand).toString() + 'm.json ' + (nextthousand).toString() +'ma.json' , function (error, stdout, stderr) {
+var ls = exec('sh do2.sh ' + counter123.toString()() + 'm.json ' + counter123.toString()() +'ma.json' , function (error, stdout, stderr) {
 if (error) {
 console.log(error.stack);
 console.log('Error code: ' + error.code);
@@ -166,8 +167,7 @@ console.log('Child Process STDERR: ' + stderr);
 ls.on('exit', function (code) {
 console.log('Child process exited with exit code ' + code);
 
-maybe = (Math.floor(new Date().getTime() / 1000 / 60)) 
-nextthousand = maybe + 1
+maybe = (Math.floor(new Date().getTime() / 1000 / 1000)) 
 }); }
 catch (err){
 
@@ -179,8 +179,8 @@ setInterval(async function(){
     try {
     maybe = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
     if (true ){
-      nextthousand = maybe
-
+      count123++
+fs.mkdirSync(count123.toString())
         counter = 0
        
    for (var config of configs){
@@ -202,7 +202,7 @@ setInterval(async function(){
     }
 console.log(counter)
    if (counter == 0){
-    fs.writeFileSync(nextthousand.toString()  + '/' + counter.toString() + '.json', JSON.stringify(config))
+    fs.writeFileSync(counter123.toString()  + '/' + counter.toString() + '.json', JSON.stringify(config))
 
   
    try {
@@ -273,7 +273,7 @@ console.log(counter)
    }
    configs[0].oracleState.finalized = true
 
-   fs.writeFileSync(nextthousand.toString()  + '/blurp.json', JSON.stringify(configs[0]))
+   fs.writeFileSync(counter123.toString()  + '/blurp.json', JSON.stringify(configs[0]))
 
    var ls = exec('matches-cli create_or_update_oracle -k id.json -env mainnet-beta -cp ' + (nextthousand ).toString() + '/blurp.json'  , function (error, stdout, stderr) {
   
@@ -303,7 +303,7 @@ console.log(counter)
   })
   
    configs = []
-     var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
+     var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + counter123.toString()() + '.json', function (error, stdout, stderr) {
 
             if (error) {
               console.log(error.stack);
@@ -317,7 +317,7 @@ console.log(counter)
           ls.on('exit', function (code) {
             console.log('Child process exited with exit code ' + code);
        
-          var ls = exec('solana address -k ' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
+          var ls = exec('solana address -k ' + counter123.toString()() + '.json', function (error, stdout, stderr) {
             if (error) {
               console.log(error.stack);
               console.log('Error code: ' + error.code);
@@ -329,7 +329,7 @@ console.log(counter)
           
           ls.on('exit', function (code) {
             console.log('Child process exited with exit code ' + code);
-          var ls = exec('solana address -k ' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
+          var ls = exec('solana address -k ' + counter123.toString()() + '.json', function (error, stdout, stderr) {
           
             if (error) {
               console.log(error.stack);
@@ -338,7 +338,7 @@ console.log(counter)
             }
             console.log('Child Process STDOUT: ' + stdout);
               nextseed = stdout
-              winning = {winning: winning.winning, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand, s: Math.ceil(new Date().getTime() / 1000 / 1000)}
+              winning = {winning: winning.winning, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand:  Math.ceil(new Date().getTime() / 1000 / 1000), s: Math.ceil(new Date().getTime() / 1000 / 1000)}
               console.log(stdout)
               console.log(stdout)
               console.log(stdout)
@@ -372,7 +372,7 @@ var ls = exec("echo '" + JSON.stringify({
         "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
       }
     ]
-  }) + "' >> " +  (nextthousand).toString() + 'm.json', function (error, stdout, stderr) {
+  }) + "' >> " +  counter123.toString()() + 'm.json', function (error, stdout, stderr) {
 
     if (error) {
       console.log(error.stack);
@@ -412,7 +412,7 @@ var ls = exec("echo '" + JSON.stringify({
             "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
           }
         ]
-      }) + "' >> " +  (nextthousand).toString() + 'ma.json', function (error, stdout, stderr) {
+      }) + "' >> " +  counter123.toString()() + 'ma.json', function (error, stdout, stderr) {
     
         if (error) {
           console.log(error.stack);
@@ -426,7 +426,7 @@ var ls = exec("echo '" + JSON.stringify({
       ls.on('exit', function (code) {
         console.log('Child process exited with exit code ' + code);
     try {
-  var ls = exec('sh do2.sh ' + (nextthousand).toString() + 'm.json ' + (nextthousand).toString() +'ma.json' , function (error, stdout, stderr) {
+  var ls = exec('sh do2.sh ' + counter123.toString()() + 'm.json ' + counter123.toString()() +'ma.json' , function (error, stdout, stderr) {
     if (error) {
       console.log(error.stack);
       console.log('Error code: ' + error.code);
@@ -449,7 +449,7 @@ ls.on('exit', function (code) {
 })          });
 
     }    
-    winning = {"winning": winning.winning, "lastplay": winning.lastplay, nextseed, nextthousand, s: Math.ceil(new Date().getTime() / 1000 / 1000) }
+    winning = {"winning": winning.winning, "lastplay": winning.lastplay, nextseed, nextthousand:  Math.ceil(new Date().getTime() / 1000 / 1000), s: Math.ceil(new Date().getTime() / 1000 / 1000) }
 
 } catch (err){
     console.log(err)
@@ -470,7 +470,7 @@ app.post(
   (req, res) { 
     try {
     let config = (req.body) 
-    winning = {"winning": config.oracleState.tokenTransfers[0].from, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand, s: Math.ceil(new Date().getTime() / 1000 / 1000) }//
+    winning = {"winning": config.oracleState.tokenTransfers[0].from, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand:  Math.ceil(new Date().getTime() / 1000 / 1000), s: Math.ceil(new Date().getTime() / 1000 / 1000) }//
    // config.oracleState.finalized = true
   configs.push(config)
   console.log(configs.length )
