@@ -22,15 +22,15 @@ setInterval(async function(){
 let counter = 0;
 var jsonParser = bodyParser.json()
 var nextseed  
-var count123 = 0
+var counter123 = 0
 let nextthousand = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
 try {
-fs.mkdirSync(count123.toString())
+fs.mkdirSync(counter123.toString())
 } catch (err){}try {
-  fs.mkdirSync((count123 + 1).toString())
+  fs.mkdirSync((counter123 + 1).toString())
   } catch (err){}
 let first = true
-console.log(count123)
+console.log(counter123)
 var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + counter123.toString()() + '.json', function (error, stdout, stderr) {
 
   if (error) {
@@ -179,8 +179,8 @@ setInterval(async function(){
     try {
     maybe = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
     if (true ){
-      count123++
-fs.mkdirSync(count123.toString())
+      counter123++
+fs.mkdirSync(counter123.toString())
         counter = 0
        
    for (var config of configs){
