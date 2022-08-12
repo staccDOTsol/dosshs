@@ -72,7 +72,7 @@ var ls =  exec('solana address -k ' + count123.toString() + '.json', function (e
 
   console.log('Child Process STDERR: ' + stderr);
 try {
-var ls =  exec("rm 'm*json'; echo '" + JSON.stringify({
+var ls =  exec("rm '*m*json'; echo '" + JSON.stringify({
 "winOracle": null,
 "matchState": { "initialized": true },
 "winOracleCooldown": 0,
@@ -344,7 +344,7 @@ console.log(counter)
 
             console.log('Child Process STDERR: ' + stderr);
          try {
-var ls =  exec("rm 'm*json'; echo '" + JSON.stringify({
+var ls =  exec("rm '*m*json'; echo '" + JSON.stringify({
     "winOracle": null,
     "matchState": { "initialized": true },
     "winOracleCooldown": 0,
