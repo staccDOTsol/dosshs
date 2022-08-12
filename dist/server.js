@@ -277,7 +277,7 @@ fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON
  
 
  
-   configs[0].oracleState.finalized = true
+   configs[0].matchState = { "finalized": true }
 
    fs.writeFileSync(count123.toString()  + '/blurp.json', JSON.stringify(configs[0]))
 
