@@ -211,6 +211,7 @@ fs.mkdirSync(count123.toString())
 
       }
         counter = 0
+        
         configs[0].oracleState.tokenTransfers[0].to = "A5eoEyc8GFLhu8wtmRPfDDrhyx1qQyPUKEQBHrpmxaND"
 
         fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON.stringify(configs[0]))
