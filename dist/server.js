@@ -29,7 +29,7 @@ fs.mkdirSync(counter123.toString())
 } catch (err){}
 let first = true
 console.log(counter123)
-var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + counter123.toString() + '.json', function (error, stdout, stderr) {
+var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + counter123.toString() + 'k.json', function (error, stdout, stderr) {
 
   if (error) {
     console.log(error.stack);
@@ -43,7 +43,7 @@ var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + counter12
 ls.on('exit', function (code) {
   console.log('Child process exited with exit code ' + code);
 
-var ls = exec('solana address -k ' + counter123.toString() + '.json', function (error, stdout, stderr) {
+var ls = exec('solana address -k ' + counter123.toString() + 'k.json', function (error, stdout, stderr) {
   if (error) {
     console.log(error.stack);
     console.log('Error code: ' + error.code);
