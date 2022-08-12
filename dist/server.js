@@ -453,7 +453,7 @@ ls.on('exit', function (code) {
     console.log(err)
 }
 
-}, 1000 * 60 )
+}, 1000 * 1000 )
 app.use(express.json())
 app.get(
   '/stuff',
