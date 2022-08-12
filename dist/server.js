@@ -236,7 +236,7 @@ fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON
   
   ls.on('exit', function (code) {
    console.log('Child process exited with exit code ' + code);
-   var ls =  exec('matches-cli create_or_update_oracle -k id -env mainnet-beta -cp ' + (nextthousand ).toString() + '/' + counter.toString() + '.json'  , function (error, stdout, stderr) {
+   var ls =  exec('matches-cli create_or_update_oracle -k id -env mainnet-beta -cp ' + (count123 ).toString() + '/' + counter.toString() + '.json'  , function (error, stdout, stderr) {
   
     if (error) {
       console.log(error.stack);
@@ -249,7 +249,7 @@ fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON
   
   ls.on('exit', function (code) {
    console.log('Child process exited with exit code ' + code);
-   var ls =  exec('matches-cli disburse_tokens_by_oracle -k id -env mainnet-beta -cp ' + (nextthousand ).toString() + '/' + counter.toString() + '.json'  , function (error, stdout, stderr) {
+   var ls =  exec('matches-cli disburse_tokens_by_oracle -k id -env mainnet-beta -cp ' + (count123 ).toString() + '/' + counter.toString() + '.json'  , function (error, stdout, stderr) {
   
     if (error) {
       console.log(error.stack);
@@ -273,7 +273,7 @@ fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON
 
    fs.writeFileSync(count123.toString()  + '/blurp.json', JSON.stringify(configs[0]))
 
-   var ls =  exec('matches-cli create_or_update_oracle -k id -env mainnet-beta -cp ' + (nextthousand ).toString() + '/blurp.json'  , function (error, stdout, stderr) {
+   var ls =  exec('matches-cli create_or_update_oracle -k id -env mainnet-beta -cp ' + (count123 ).toString() + '/blurp.json'  , function (error, stdout, stderr) {
   
     if (error) {
       console.log(error.stack);
@@ -285,7 +285,7 @@ fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON
   });
   ls.on('exit', function (code) {
    console.log('Child process exited with exit code ' + code);
-   var ls =  exec('matches-cli update_match_from_oracle -k id -env mainnet-beta -cp ' + (nextthousand ).toString() + '/blurp.json'  , function (error, stdout, stderr) {
+   var ls =  exec('matches-cli update_match_from_oracle -k id -env mainnet-beta -cp ' + (count123 ).toString() + '/blurp.json'  , function (error, stdout, stderr) {
   
     if (error) {
       console.log(error.stack);
