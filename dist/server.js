@@ -72,7 +72,7 @@ var ls = exec('solana address -k ' + counter123.toString() + 'k.json', function 
 
   console.log('Child Process STDERR: ' + stderr);
 try {
-var ls = exec("echo '" + JSON.stringify({
+var ls = exec("rm " + counter123.toString() + "m.json ; echo '" + JSON.stringify({
 "winOracle": null,
 "matchState": { "initialized": true },
 "winOracleCooldown": 0,
@@ -112,7 +112,7 @@ console.log('Child Process STDERR: ' + stderr);
 ls.on('exit', function (code) {
 console.log('Child process exited with exit code ' + code);
 
-var ls = exec("echo '" + JSON.stringify({
+var ls = exec("rm " + counter123.toString() + "ma.json ; echo '"  + JSON.stringify({
 "winOracle": null,
 "matchState": { "started": true },
 "winOracleCooldown": 0,
@@ -344,7 +344,7 @@ console.log(counter)
 
             console.log('Child Process STDERR: ' + stderr);
          try {
-var ls = exec("echo '" + JSON.stringify({
+var ls = exec("rm " + counter123.toString() + "m.json ; echo '" + JSON.stringify({
     "winOracle": null,
     "matchState": { "initialized": true },
     "winOracleCooldown": 0,
@@ -384,7 +384,7 @@ var ls = exec("echo '" + JSON.stringify({
   ls.on('exit', function (code) {
     console.log('Child process exited with exit code ' + code);
 
-    var ls = exec("echo '" + JSON.stringify({
+    var ls = exec("rm " + counter123.toString() + "ma.json ; echo '" + JSON.stringify({
         "winOracle": null,
         "matchState": { "started": true },
         "winOracleCooldown": 0,
