@@ -134,6 +134,34 @@ var ls =  exec("echo '" + JSON.stringify({
 ]
 }) + "' >> ma2" +  count123.toString() + '.json', function (error, stdout, stderr) {
 
+  var ls =  exec("echo '" + JSON.stringify({
+    "winOracle": null,
+    "matchState": { "finalized": true },
+    "winOracleCooldown": 0,
+    "space": 300,
+    "minimumAllowedEntryTime": null,
+    "tokenEntryValidation": null,
+    "authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
+    "leaveAllowed": true,
+    "joinAllowedDuringStart": true,
+    "oracleState": {
+      "seed": seeds[seeds.length-1].replace('\n',''),
+      "authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
+      "finalized": false,
+      "tokenTransferRoot": null,
+      "tokenTransfers": [ ]
+    },
+    "tokensToJoin": [
+      {
+        "mint": "7Ti7cweodcPBcGEXVAJnu2CsY3zCXrKChTbUEqUgSiKi",
+        "amount": 138000,
+        "sourceType": 1,
+        "index": 0,
+        "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
+      }
+    ]
+  }) + "' >> ma2f" +  count123.toString() + '.json', function (error, stdout, stderr) {
+
 if (error) {
 console.log(error.stack);
 console.log('Error code: ' + error.code);
@@ -164,6 +192,7 @@ maybe = (Math.floor(new Date().getTime() / 1000 / 1000))
 catch (err){
 
 }
+})
 })
 })} catch (err){}})})})
 
@@ -250,6 +279,58 @@ fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON
 for (var iii in configs){
   is.push(iii)
 }
+
+var ls =  exec("echo '" + JSON.stringify({
+  "winOracle": null,
+  "matchState": { "finalized": true },
+  "winOracleCooldown": 0,
+  "space": 300,
+  "minimumAllowedEntryTime": null,
+  "tokenEntryValidation": null,
+  "authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
+  "leaveAllowed": true,
+  "joinAllowedDuringStart": true,
+  "oracleState": {
+    "seed": seeds[seeds.length-1].replace('\n',''),
+    "authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
+    "finalized": false,
+    "tokenTransferRoot": null,
+    "tokenTransfers": [ ]
+  },
+  "tokensToJoin": [
+    {
+      "mint": "7Ti7cweodcPBcGEXVAJnu2CsY3zCXrKChTbUEqUgSiKi",
+      "amount": 138000,
+      "sourceType": 1,
+      "index": 0,
+      "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
+    }
+  ]
+}) + "' >> maf" +  count123.toString() + '.json', function (error, stdout, stderr) {
+
+  if (error) {
+    console.log(error.stack);
+    console.log('Error code: ' + error.code);
+    console.log('Signal received: ' + error.signal);
+  }
+  console.log('Child Process STDOUT: ' + stdout);
+  console.log('Child Process STDERR: ' + stderr);
+});
+
+ls.on('exit', function (code) {
+  console.log('Child process exited with exit code ' + code);
+
+var ls =  exec('matches-cli update_match -k id -env mainnet-beta -cp maf' + (count123 ).toString() +'.json'  , function (error, stdout, stderr) {
+  
+  if (error) {
+    console.log(error.stack);
+    console.log('Error code: ' + error.code);
+    console.log('Signal received: ' + error.signal);
+  }
+  console.log('Child Process STDOUT: ' + stdout);
+  console.log('Child Process STDERR: ' + stderr);
+});
+ls.on('exit', function (code) {
   await PromisePool.withConcurrency(500)
   .for(is)
   // @ts-ignore
@@ -278,6 +359,8 @@ for (var iii in configs){
 } catch (err){
 
 }
+})
+})
 })
   
  
