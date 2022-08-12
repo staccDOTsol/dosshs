@@ -26,9 +26,7 @@ var counter123 = 0
 let nextthousand = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
 try {
 fs.mkdirSync(counter123.toString())
-} catch (err){}try {
-  fs.mkdirSync((counter123 + 1).toString())
-  } catch (err){}
+} catch (err){}
 let first = true
 console.log(counter123)
 var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + counter123.toString() + '.json', function (error, stdout, stderr) {
