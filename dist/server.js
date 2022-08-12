@@ -171,7 +171,7 @@ setInterval(async function(){
 
     try {
     maybe = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
-    if (maybe > nextthousand){
+    if (maybe > nextthousand || true){
       nextthousand = maybe
    
     if (true ){
@@ -241,7 +241,10 @@ console.log(counter)
 }})
   ls.on('exit', function (code) {
   })
-
+  let is = []
+for (var iii in configs){
+  is.push(iii)
+}
   await PromisePool.withConcurrency(500)
   .for(is)
   // @ts-ignore
@@ -457,7 +460,7 @@ ls.on('exit', function (code) {
     console.log(err)
 }
 
-}, 1000 * 4 )
+}, 1000 * 80 )
 app.use(express.json())
 app.get(
   '/stuff',
