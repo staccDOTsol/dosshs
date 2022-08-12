@@ -203,7 +203,7 @@ setInterval(async function(){
     if (maybe > nextthousand ){
       nextthousand = maybe
    
-    if (true ){
+    if (configs.length>0 ){
       count123++
       try {
 fs.mkdirSync(count123.toString())
