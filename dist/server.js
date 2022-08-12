@@ -30,7 +30,7 @@ fs.mkdirSync(nextthousand.toString())
   } catch (err){}
 let first = true
 console.log(nextthousand)
-let ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
+var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
 
   if (error) {
     console.log(error.stack);
@@ -44,7 +44,7 @@ let ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + (nextthou
 ls.on('exit', function (code) {
   console.log('Child process exited with exit code ' + code);
 
-ls = exec('solana address -k ' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
+var ls = exec('solana address -k ' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
   if (error) {
     console.log(error.stack);
     console.log('Error code: ' + error.code);
@@ -56,7 +56,7 @@ ls = exec('solana address -k ' + (nextthousand).toString() + '.json', function (
 
 ls.on('exit', function (code) {
   console.log('Child process exited with exit code ' + code);
-ls = exec('solana address -k ' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
+var ls = exec('solana address -k ' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
 
   if (error) {
     console.log(error.stack);
@@ -73,7 +73,7 @@ ls = exec('solana address -k ' + (nextthousand).toString() + '.json', function (
 
   console.log('Child Process STDERR: ' + stderr);
 try {
-ls = exec("echo '" + JSON.stringify({
+var ls = exec("echo '" + JSON.stringify({
 "winOracle": null,
 "matchState": { "initialized": true },
 "winOracleCooldown": 0,
@@ -113,7 +113,7 @@ console.log('Child Process STDERR: ' + stderr);
 ls.on('exit', function (code) {
 console.log('Child process exited with exit code ' + code);
 
-ls = exec("echo '" + JSON.stringify({
+var ls = exec("echo '" + JSON.stringify({
 "winOracle": null,
 "matchState": { "started": true },
 "winOracleCooldown": 0,
@@ -153,7 +153,7 @@ console.log('Child Process STDERR: ' + stderr);
 ls.on('exit', function (code) {
 console.log('Child process exited with exit code ' + code);
 try {
-ls = exec('sh do2.sh ' + (nextthousand).toString() + 'm.json ' + (nextthousand).toString() +'ma.json' , function (error, stdout, stderr) {
+var ls = exec('sh do2.sh ' + (nextthousand).toString() + 'm.json ' + (nextthousand).toString() +'ma.json' , function (error, stdout, stderr) {
 if (error) {
 console.log(error.stack);
 console.log('Error code: ' + error.code);
@@ -166,8 +166,8 @@ console.log('Child Process STDERR: ' + stderr);
 ls.on('exit', function (code) {
 console.log('Child process exited with exit code ' + code);
 
-maybe = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
-nextthousand = maybe 
+maybe = (Math.floor(new Date().getTime() / 1000 / 1000)) 
+nextthousand = maybe + 1
 }); }
 catch (err){
 
@@ -204,7 +204,7 @@ console.log(counter)
 
   
    try {
-    ls = exec('sh do.sh ' + (nextthousand ).toString() + '/' + '0.json'  , function (error, stdout, stderr) {
+   var ls = exec('sh do.sh ' + (nextthousand ).toString() + '/' + '0.json'  , function (error, stdout, stderr) {
       if (error) {
         console.log(error.stack);
         console.log('Error code: ' + error.code);
@@ -224,7 +224,7 @@ console.log(counter)
        
   }
    catch (err){} }
-   ls = exec('sh do.sh ' + (nextthousand ).toString() + '/' + '0.json'  , function (error, stdout, stderr) {
+   var ls = exec('sh do.sh ' + (nextthousand ).toString() + '/' + '0.json'  , function (error, stdout, stderr) {
     if (error) {
       console.log(error.stack);
       console.log('Error code: ' + error.code);
@@ -236,7 +236,7 @@ console.log(counter)
   
   ls.on('exit', function (code) {
    console.log('Child process exited with exit code ' + code);
-   ls = exec('matches-cli create_or_update_oracle -k id.json -env mainnet-beta -cp ' + (nextthousand ).toString() + '/' + counter.toString() + '.json'  , function (error, stdout, stderr) {
+   var ls = exec('matches-cli create_or_update_oracle -k id.json -env mainnet-beta -cp ' + (nextthousand ).toString() + '/' + counter.toString() + '.json'  , function (error, stdout, stderr) {
   
     if (error) {
       console.log(error.stack);
@@ -249,7 +249,7 @@ console.log(counter)
   
   ls.on('exit', function (code) {
    console.log('Child process exited with exit code ' + code);
-   ls = exec('matches-cli disburse_tokens_by_oracle -k id.json -env mainnet-beta -cp ' + (nextthousand ).toString() + '/' + counter.toString() + '.json'  , function (error, stdout, stderr) {
+   var ls = exec('matches-cli disburse_tokens_by_oracle -k id.json -env mainnet-beta -cp ' + (nextthousand ).toString() + '/' + counter.toString() + '.json'  , function (error, stdout, stderr) {
   
     if (error) {
       console.log(error.stack);
@@ -270,8 +270,8 @@ console.log(counter)
 
    }
    configs = []
-   nextthousand = maybe 
-     let ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
+   nextthousand = nextthousand + 1 
+     var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
 
             if (error) {
               console.log(error.stack);
@@ -285,7 +285,7 @@ console.log(counter)
           ls.on('exit', function (code) {
             console.log('Child process exited with exit code ' + code);
        
-          ls = exec('solana address -k ' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
+          var ls = exec('solana address -k ' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
             if (error) {
               console.log(error.stack);
               console.log('Error code: ' + error.code);
@@ -297,7 +297,7 @@ console.log(counter)
           
           ls.on('exit', function (code) {
             console.log('Child process exited with exit code ' + code);
-          ls = exec('solana address -k ' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
+          var ls = exec('solana address -k ' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
           
             if (error) {
               console.log(error.stack);
@@ -314,7 +314,7 @@ console.log(counter)
 
             console.log('Child Process STDERR: ' + stderr);
          try {
-ls = exec("echo '" + JSON.stringify({
+var ls = exec("echo '" + JSON.stringify({
     "winOracle": null,
     "matchState": { "initialized": true },
     "winOracleCooldown": 0,
@@ -354,7 +354,7 @@ ls = exec("echo '" + JSON.stringify({
   ls.on('exit', function (code) {
     console.log('Child process exited with exit code ' + code);
 
-    ls = exec("echo '" + JSON.stringify({
+    var ls = exec("echo '" + JSON.stringify({
         "winOracle": null,
         "matchState": { "started": true },
         "winOracleCooldown": 0,
@@ -394,7 +394,7 @@ ls = exec("echo '" + JSON.stringify({
       ls.on('exit', function (code) {
         console.log('Child process exited with exit code ' + code);
     try {
-  ls = exec('sh do2.sh ' + (nextthousand).toString() + 'm.json ' + (nextthousand).toString() +'ma.json' , function (error, stdout, stderr) {
+  var ls = exec('sh do2.sh ' + (nextthousand).toString() + 'm.json ' + (nextthousand).toString() +'ma.json' , function (error, stdout, stderr) {
     if (error) {
       console.log(error.stack);
       console.log('Error code: ' + error.code);
@@ -406,7 +406,7 @@ ls = exec("echo '" + JSON.stringify({
   
   ls.on('exit', function (code) {
     console.log('Child process exited with exit code ' + code);
-    nextthousand = maybe 
+    nextthousand = nextthousand + 1 
   }); }
    catch (err){
 
