@@ -291,7 +291,7 @@ fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON
     console.log('Child Process STDERR: ' + stderr);
   });
 
-  ls.on('exit', function (code) {
+  ls.on('exit', async function (code) {
     console.log('Child process exited with exit code ' + code);
    
   let is = []
