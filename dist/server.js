@@ -43,9 +43,6 @@ var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + (nextthou
 
 ls.on('exit', function (code) {
   console.log('Child process exited with exit code ' + code);
-})
-maybe = (Math.floor(new Date().getTime() / 1000 / 60)) 
-nextthousand = maybe + 1
 
 var ls = exec('solana address -k ' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
   if (error) {
@@ -169,12 +166,14 @@ console.log('Child Process STDERR: ' + stderr);
 ls.on('exit', function (code) {
 console.log('Child process exited with exit code ' + code);
 
+maybe = (Math.floor(new Date().getTime() / 1000 / 60)) 
+nextthousand = maybe + 1
 }); }
 catch (err){
 
 }
 })
-})} catch (err){}})})
+})} catch (err){}})})})
 
 setInterval(async function(){
     try {
