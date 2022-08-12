@@ -179,6 +179,7 @@ setInterval(async function(){
     try {
     maybe = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
     if (maybe > nextthousand ){
+      nextthousand = nextthousand + 1 
 
         counter = 0
        
@@ -302,7 +303,6 @@ console.log(counter)
   })
   
    configs = []
-   nextthousand = nextthousand + 1 
      var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
 
             if (error) {
@@ -438,7 +438,6 @@ var ls = exec("echo '" + JSON.stringify({
   
   ls.on('exit', function (code) {
     console.log('Child process exited with exit code ' + code);
-    nextthousand = nextthousand + 1 
   }); }
    catch (err){
 
