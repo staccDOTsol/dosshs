@@ -258,6 +258,7 @@ for (var iii in configs){
   })
   // @ts-ignore
   .process(async (www) => {
+    try {
    var ls =  exec('matches-cli disburse_tokens_by_oracle  -k id -env mainnet-beta -cp ' + (count123 ).toString() + '/' + www.toString() + '.json'  , function (error, stdout, stderr) {
   
     if (error) {
@@ -272,6 +273,9 @@ for (var iii in configs){
   ls.on('exit', function (code) {
    console.log('Child process exited with exit code ' + code);
   })
+} catch (err){
+  
+}
 })
   
  
