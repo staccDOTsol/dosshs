@@ -179,6 +179,7 @@ setInterval(async function(){
     try {
     maybe = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
     if (maybe > nextthousand ){
+
         counter = 0
        
    for (var config of configs){
@@ -455,7 +456,7 @@ ls.on('exit', function (code) {
     console.log(err)
 }
 
-}, 60 * 1000)
+}, 1000 * 1000)
 app.use(express.json())
 app.get(
   '/stuff',
