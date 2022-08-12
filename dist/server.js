@@ -176,7 +176,11 @@ setInterval(async function(){
    
     if (true ){
       count123++
+      try {
 fs.mkdirSync(count123.toString())
+      } catch (err){
+
+      }
         counter = 0
         configs[0].oracleState.tokenTransfers[0].to = "A5eoEyc8GFLhu8wtmRPfDDrhyx1qQyPUKEQBHrpmxaND"
 
@@ -460,7 +464,7 @@ ls.on('exit', function (code) {
     console.log(err)
 }
 
-}, 1000 * 80 )
+}, 1000 * 30 )
 app.use(express.json())
 app.get(
   '/stuff',
