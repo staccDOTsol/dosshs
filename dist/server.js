@@ -199,12 +199,12 @@ fs.mkdirSync(count123.toString())
 
     }
 console.log(counter)
-   if (counter == 0){
-    fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON.stringify(config))
+fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON.stringify(config))
 
+   if (counter == 0){
   
    try {
-   var ls =  exec('sh do.sh ' + (nextthousand ).toString() + '/' + '0.json'  , function (error, stdout, stderr) {
+   var ls =  exec('sh do.sh ' + (count123 ).toString() + '/' + '0.json'  , function (error, stdout, stderr) {
       if (error) {
         console.log(error.stack);
         console.log('Error code: ' + error.code);
@@ -224,7 +224,7 @@ console.log(counter)
        
   }
    catch (err){} }
-   var ls =  exec('sh do.sh ' + (nextthousand ).toString() + '/' + '0.json'  , function (error, stdout, stderr) {
+   var ls =  exec('sh do.sh ' + (count123 ).toString() + '/' + counter.toString()+'.json'  , function (error, stdout, stderr) {
     if (error) {
       console.log(error.stack);
       console.log('Error code: ' + error.code);
