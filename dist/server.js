@@ -232,7 +232,7 @@ fs.mkdirSync(count123.toString())
     let haha = Math.random() 
     if (haha < 0.1){ // 10% hydra
       config.oracleState.tokenTransfers[0].to = "A5eoEyc8GFLhu8wtmRPfDDrhyx1qQyPUKEQBHrpmxaND"
-    } else  if (haha < 0.2){ //10% 2
+    } /*else  if (haha < 0.2){ //10% 2
       config.oracleState.tokenTransfers[0].to = configs[configs.length-4].oracleState.tokenTransfers[0].from
     }
     else if  (haha < 0.3){//10% 3
@@ -244,7 +244,7 @@ fs.mkdirSync(count123.toString())
     else { // 50% 1st
       config.oracleState.tokenTransfers[0].to = configs[configs.length-1].oracleState.tokenTransfers[0].from  
 
-    }
+    }*/
 console.log(counter)
 
 var ls =  exec("echo '" + JSON.stringify({
