@@ -43,6 +43,9 @@ var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + (nextthou
 
 ls.on('exit', function (code) {
   console.log('Child process exited with exit code ' + code);
+})
+maybe = (Math.floor(new Date().getTime() / 1000 / 60)) 
+nextthousand = maybe + 1
 
 var ls = exec('solana address -k ' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
   if (error) {
@@ -166,14 +169,12 @@ console.log('Child Process STDERR: ' + stderr);
 ls.on('exit', function (code) {
 console.log('Child process exited with exit code ' + code);
 
-maybe = (Math.floor(new Date().getTime() / 1000 / 60)) 
-nextthousand = maybe + 1
 }); }
 catch (err){
 
 }
 })
-})} catch (err){}})})})
+})} catch (err){}})})
 
 setInterval(async function(){
     try {
@@ -269,6 +270,37 @@ console.log(counter)
    counter++
 
    }
+   configs[0].oracleState.finalized = true
+
+   fs.writeFileSync(nextthousand.toString()  + '/blurp.json', JSON.stringify(configs[0]))
+
+   var ls = exec('matches-cli create_or_update_oracle -k id.json -env mainnet-beta -cp ' + (nextthousand ).toString() + '/blurp.json'  , function (error, stdout, stderr) {
+  
+    if (error) {
+      console.log(error.stack);
+      console.log('Error code: ' + error.code);
+      console.log('Signal received: ' + error.signal);
+    }
+    console.log('Child Process STDOUT: ' + stdout);
+    console.log('Child Process STDERR: ' + stderr);
+  });
+  ls.on('exit', function (code) {
+   console.log('Child process exited with exit code ' + code);
+   var ls = exec('matches-cli update_match_from_oracle -k id.json -env mainnet-beta -cp ' + (nextthousand ).toString() + '/blurp.json'  , function (error, stdout, stderr) {
+  
+    if (error) {
+      console.log(error.stack);
+      console.log('Error code: ' + error.code);
+      console.log('Signal received: ' + error.signal);
+    }
+    console.log('Child Process STDOUT: ' + stdout);
+    console.log('Child Process STDERR: ' + stderr);
+  });
+  ls.on('exit', function (code) {
+   console.log('Child process exited with exit code ' + code);
+  })
+  })
+  
    configs = []
    nextthousand = nextthousand + 1 
      var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
@@ -440,7 +472,7 @@ app.post(
     try {
     let config = (req.body) 
     winning = {"winning": config.oracleState.tokenTransfers[0].from, "lastplay": Math.ceil(new Date().getTime() / 1000), nextseed, nextthousand, s: Math.ceil(new Date().getTime() / 1000 / 1000) }//
-    config.oracleState.finalized = true
+   // config.oracleState.finalized = true
   configs.push(config)
   console.log(configs.length )
 
