@@ -330,7 +330,7 @@ var ls =  exec('matches-cli update_match -k id -env mainnet-beta -cp maf' + (cou
   console.log('Child Process STDOUT: ' + stdout);
   console.log('Child Process STDERR: ' + stderr);
 });
-ls.on('exit', function (code) {
+ls.on('exit',async function (code) {
   await PromisePool.withConcurrency(500)
   .for(is)
   // @ts-ignore
