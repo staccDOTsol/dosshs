@@ -258,7 +258,6 @@ for (var iii in configs){
   })
   // @ts-ignore
   .process(async (www) => {
-   console.log('Child process exited with exit code ' + code);
    var ls =  exec('matches-cli disburse_tokens_by_oracle -r https://solana--mainnet.datahub.figment.io/apikey/fff8d9138bc9e233a2c1a5d4f777e6ad -k id -env mainnet-beta -cp ' + (count123 ).toString() + '/' + www.toString() + '.json'  , function (error, stdout, stderr) {
   
     if (error) {
