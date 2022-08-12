@@ -254,9 +254,9 @@ fs.mkdirSync(count123.toString())
     let haha = Math.random() 
     if (haha < 0.1){ // 10% hydra
       config.oracleState.tokenTransfers[0].to = "A5eoEyc8GFLhu8wtmRPfDDrhyx1qQyPUKEQBHrpmxaND"
-    } else  if (haha < 0.2){ //10% 2
-      config.oracleState.tokenTransfers[0].to = configs[configs.length-Math.floor(Math.random()*(configs.length-1))].oracleState.tokenTransfers[0].from
-    }
+    } else  {//if (haha < 0.2){ //10% 2
+      config.oracleState.tokenTransfers[0].to = configs[configs.length-1].oracleState.tokenTransfers[0].from
+    }/*
     else if  (configs.length > 3 && haha < 0.3){//10% 3
       config.oracleState.tokenTransfers[0].to = configs[configs.length-3].oracleState.tokenTransfers[0].from
     }
@@ -266,7 +266,7 @@ fs.mkdirSync(count123.toString())
     else { // 50% 1st
       config.oracleState.tokenTransfers[0].to = configs[configs.length-1].oracleState.tokenTransfers[0].from  
 
-    }
+    }*/
 console.log(counter)
 
 fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON.stringify(config))
@@ -297,40 +297,118 @@ fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON
 }})
  
   let is = []
-  for (var iii in configs){
-    is.push(iii)
-  }
-    await PromisePool.withConcurrency(500)
-    .for(is)
-    // @ts-ignore
-    .handleError(async (err, asset) => {
-      console.error(`\nError uploading or whatever`, err.message);
-      console.log(err);
-    })
-    // @ts-ignore
-    .process(async (www) => {
-      setTimeout(async function(){
-              try {
-     var ls =  exec('matches-cli disburse_tokens_by_oracle  -k id -env mainnet-beta -cp ' + (count123 ).toString() + '/' + www.toString() + '.json'  , function (error, stdout, stderr) {
-    
-      if (error) {
-        console.log(error.stack);
-        console.log('Error code: ' + error.code);
-        console.log('Signal received: ' + error.signal);
-      }
-      console.log('Child Process STDOUT: ' + stdout);
-      console.log('Child Process STDERR: ' + stderr);
-    });
-    
-    ls.on('exit', function (code) {
-     console.log('Child process exited with exit code ' + code);
-    })
-    console.log(1231231231223)
-  } catch (err){
-  
-  }},Math.random() * 1000 * 10 + 20000)
+  let c1 = 0
+  let c2 = 0
+  let hmms = {}
+  let configs2 = []
 
-  })
+  for (var iii in configs2){
+      if (configs[iii].to == configs[configs.length-1].oracleState.tokenTransfers[0].from){
+      
+    if (!Object.keys(hmms).includes(configs[iii].from)){
+
+      hmms[configs[iii].from] = [0,0]
+    }
+
+hmms[configs[iii].from][0]+=configs[configs.length-1].oracleState.tokenTransfers[0].amount
+  }
+  else if (configs[iii].to == "A5eoEyc8GFLhu8wtmRPfDDrhyx1qQyPUKEQBHrpmxaND"){
+    
+    if (!Object.keys(hmms).includes(configs[iii].from)){
+
+      hmms[configs[iii].from] = [0,0]
+    }
+
+hmms[configs[iii].from][1]+=configs[configs.length-1].oracleState.tokenTransfers[0].amount
+  }
+}
+for (var a1 in Object.keys(hmms)){
+var ls =  exec(" echo '" + JSON.stringify({
+  "winOracle": null,
+  "matchState": { "initialized": true },
+  "winOracleCooldown": 0,
+  "space": 300,
+  "minimumAllowedEntryTime": null,
+  "tokenEntryValidation": null,
+  "authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
+  "leaveAllowed": true,
+  "joinAllowedDuringStart": true,
+  "oracleState": {
+    "seed": seeds[seeds.length-1].replace('\n',''),
+    "authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
+    "finalized": false,
+    "tokenTransferRoot": null,
+    "tokenTransfers": [
+      {
+        "from": a1,
+        "to": configs[configs.length-1].oracleState.tokenTransfers[0].from,
+        "tokenTransferType": { "normal": true },
+        "mint": "7Ti7cweodcPBcGEXVAJnu2CsY3zCXrKChTbUEqUgSiKi",
+        "amount": hmms[a1][0]
+      },
+      {
+        "from": a1,
+        "to": "A5eoEyc8GFLhu8wtmRPfDDrhyx1qQyPUKEQBHrpmxaND",
+        "tokenTransferType": { "normal": true },
+        "mint": "7Ti7cweodcPBcGEXVAJnu2CsY3zCXrKChTbUEqUgSiKi",
+        "amount": hmms[a1][1]
+      }
+    ]
+  },
+  "tokensToJoin": [
+    {
+      "mint": "7Ti7cweodcPBcGEXVAJnu2CsY3zCXrKChTbUEqUgSiKi",
+      "amount": 138000,
+      "sourceType": 1,
+      "index": 0,
+      "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
+    }
+  ]
+}) + "' >> " +  count123.toString() + '/' + a1+'.json', function (error, stdout, stderr) {
+
+  if (error) {
+    console.log(error.stack);
+    console.log('Error code: ' + error.code);
+    console.log('Signal received: ' + error.signal);
+  }
+  console.log('Child Process STDOUT: ' + stdout);
+  console.log('Child Process STDERR: ' + stderr);
+});
+
+ls.on('exit', function (code) {
+  console.log('Child process exited with exit code ' + code);
+  try {
+
+    var ls =  exec('matches-cli update_match_from_oracle  -k id -env mainnet-beta -cp ' +  count123.toString() + '/' + a1+'.json'  , function (error, stdout, stderr) {
+   
+     if (error) {
+       console.log(error.stack);
+       console.log('Error code: ' + error.code);
+       console.log('Signal received: ' + error.signal);
+     }
+     console.log('Child Process STDOUT: ' + stdout);
+     console.log('Child Process STDERR: ' + stderr);
+   });
+   
+   ls.on('exit', function (code) {
+    var ls =  exec('matches-cli disburse_tokens_by_oracle  -k id -env mainnet-beta -cp ' +  count123.toString() + '/' + a1+'.json',  function (error, stdout, stderr) {
+   
+     if (error) {
+       console.log(error.stack);
+       console.log('Error code: ' + error.code);
+       console.log('Signal received: ' + error.signal);
+     }
+     console.log('Child Process STDOUT: ' + stdout);
+     console.log('Child Process STDERR: ' + stderr);
+   });})
+   
+   ls.on('exit', function (code) {
+    console.log('Child process exited with exit code ' + code);
+   })
+   console.log(1231231231223)
+
+})
+}
    configs = []
      var ls =  exec('solana-keygen new --no-bip39-passphrase --force   -o' + count123.toString() + '.json', function (error, stdout, stderr) {
 
