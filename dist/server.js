@@ -29,7 +29,7 @@ fs.mkdirSync(count123.toString())
 } catch (err){}
 let first = true
 console.log(count123)
-var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + count123.toString()() + '.json', function (error, stdout, stderr) {
+var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + count123.toString() + '.json', function (error, stdout, stderr) {
 
   if (error) {
     console.log(error.stack);
@@ -43,7 +43,7 @@ var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + count123.
 ls.on('exit', function (code) {
   console.log('Child process exited with exit code ' + code);
 
-var ls = exec('solana address -k ' + count123.toString()() + '.json', function (error, stdout, stderr) {
+var ls = exec('solana address -k ' + count123.toString() + '.json', function (error, stdout, stderr) {
   if (error) {
     console.log(error.stack);
     console.log('Error code: ' + error.code);
@@ -55,7 +55,7 @@ var ls = exec('solana address -k ' + count123.toString()() + '.json', function (
 
 ls.on('exit', function (code) {
   console.log('Child process exited with exit code ' + code);
-var ls = exec('solana address -k ' + count123.toString()() + '.json', function (error, stdout, stderr) {
+var ls = exec('solana address -k ' + count123.toString() + '.json', function (error, stdout, stderr) {
 
   if (error) {
     console.log(error.stack);
@@ -98,7 +98,7 @@ var ls = exec("echo '" + JSON.stringify({
 "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
 }
 ]
-}) + "' >> " +  count123.toString()() + 'm.json', function (error, stdout, stderr) {
+}) + "' >> " +  count123.toString() + 'm.json', function (error, stdout, stderr) {
 
 if (error) {
 console.log(error.stack);
@@ -138,7 +138,7 @@ var ls = exec("echo '" + JSON.stringify({
   "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
 }
 ]
-}) + "' >> " +  count123.toString()() + 'ma.json', function (error, stdout, stderr) {
+}) + "' >> " +  count123.toString() + 'ma.json', function (error, stdout, stderr) {
 
 if (error) {
 console.log(error.stack);
@@ -152,7 +152,7 @@ console.log('Child Process STDERR: ' + stderr);
 ls.on('exit', function (code) {
 console.log('Child process exited with exit code ' + code);
 try {
-var ls = exec('sh do2.sh ' + count123.toString()() + 'm.json ' + count123.toString()() +'ma.json' , function (error, stdout, stderr) {
+var ls = exec('sh do2.sh ' + count123.toString() + 'm.json ' + count123.toString() +'ma.json' , function (error, stdout, stderr) {
 if (error) {
 console.log(error.stack);
 console.log('Error code: ' + error.code);
@@ -301,7 +301,7 @@ console.log(counter)
   })
   
    configs = []
-     var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + count123.toString()() + '.json', function (error, stdout, stderr) {
+     var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + count123.toString() + '.json', function (error, stdout, stderr) {
 
             if (error) {
               console.log(error.stack);
@@ -315,7 +315,7 @@ console.log(counter)
           ls.on('exit', function (code) {
             console.log('Child process exited with exit code ' + code);
        
-          var ls = exec('solana address -k ' + count123.toString()() + '.json', function (error, stdout, stderr) {
+          var ls = exec('solana address -k ' + count123.toString() + '.json', function (error, stdout, stderr) {
             if (error) {
               console.log(error.stack);
               console.log('Error code: ' + error.code);
@@ -327,7 +327,7 @@ console.log(counter)
           
           ls.on('exit', function (code) {
             console.log('Child process exited with exit code ' + code);
-          var ls = exec('solana address -k ' + count123.toString()() + '.json', function (error, stdout, stderr) {
+          var ls = exec('solana address -k ' + count123.toString() + '.json', function (error, stdout, stderr) {
           
             if (error) {
               console.log(error.stack);
@@ -370,7 +370,7 @@ var ls = exec("echo '" + JSON.stringify({
         "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
       }
     ]
-  }) + "' >> " +  count123.toString()() + 'm.json', function (error, stdout, stderr) {
+  }) + "' >> " +  count123.toString() + 'm.json', function (error, stdout, stderr) {
 
     if (error) {
       console.log(error.stack);
@@ -410,7 +410,7 @@ var ls = exec("echo '" + JSON.stringify({
             "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
           }
         ]
-      }) + "' >> " +  count123.toString()() + 'ma.json', function (error, stdout, stderr) {
+      }) + "' >> " +  count123.toString() + 'ma.json', function (error, stdout, stderr) {
     
         if (error) {
           console.log(error.stack);
@@ -424,7 +424,7 @@ var ls = exec("echo '" + JSON.stringify({
       ls.on('exit', function (code) {
         console.log('Child process exited with exit code ' + code);
     try {
-  var ls = exec('sh do2.sh ' + count123.toString()() + 'm.json ' + count123.toString()() +'ma.json' , function (error, stdout, stderr) {
+  var ls = exec('sh do2.sh ' + count123.toString() + 'm.json ' + count123.toString() +'ma.json' , function (error, stdout, stderr) {
     if (error) {
       console.log(error.stack);
       console.log('Error code: ' + error.code);
