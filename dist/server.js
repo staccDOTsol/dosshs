@@ -19,7 +19,7 @@ setInterval(async function(){
     catch (err){
 
     }
-}, 1000 * 1000)
+}, 1000 * 4)
 let counter = 0;
 var jsonParser = bodyParser.json()
 var nextseed  
