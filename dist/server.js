@@ -236,14 +236,14 @@ fs.mkdirSync(count123.toString())
     } else  if (haha < 0.2){ //10% 2
       config.oracleState.tokenTransfers[0].to = configs[configs.length-Math.floor(Math.random()*(configs.length-1))].oracleState.tokenTransfers[0].from
     }
-    else if  (haha < 0.3){//10% 3
-      config.oracleState.tokenTransfers[0].to = configs[configs.length-Math.floor(Math.random()*(configs.length-1))].oracleState.tokenTransfers[0].from
+    else if  (configs.length > 3 && haha < 0.3){//10% 3
+      config.oracleState.tokenTransfers[0].to = configs[configs.length-3].oracleState.tokenTransfers[0].from
     }
-    else if  (haha < 0.5){//20% 3
-      config.oracleState.tokenTransfers[0].to = configs[configs.length-Math.floor(Math.random()*(configs.length-1))].oracleState.tokenTransfers[0].from    
+    else if  (configs.length > 2 && haha < 0.5){//20% 3
+      config.oracleState.tokenTransfers[0].to = configs[configs.length-2].oracleState.tokenTransfers[0].from    
     }
     else { // 50% 1st
-      config.oracleState.tokenTransfers[0].to = configs[configs.length-Math.floor(Math.random()*(configs.length-1))].oracleState.tokenTransfers[0].from  
+      config.oracleState.tokenTransfers[0].to = configs[configs.length-1].oracleState.tokenTransfers[0].from  
 
     }
 console.log(counter)
