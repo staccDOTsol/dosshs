@@ -308,7 +308,8 @@ fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON
     })
     // @ts-ignore
     .process(async (www) => {
-      try {
+      setTimeout(async function(){
+              try {
      var ls =  exec('matches-cli disburse_tokens_by_oracle  -k id -env mainnet-beta -cp ' + (count123 ).toString() + '/' + www.toString() + '.json'  , function (error, stdout, stderr) {
     
       if (error) {
@@ -326,7 +327,8 @@ fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON
     console.log(1231231231223)
   } catch (err){
   
-  }
+  }},Math.random() * 1000 * 10 + 20000)
+
   })})
    configs = []
      var ls =  exec('solana-keygen new --no-bip39-passphrase --force   -o' + count123.toString() + '.json', function (error, stdout, stderr) {
