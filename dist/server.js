@@ -247,39 +247,6 @@ fs.mkdirSync(count123.toString())
     }
 console.log(counter)
 
-fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON.stringify(config))
-
-   var ls =  exec('sh do.sh ' + (count123 ).toString() + '/' + counter.toString()+'.json'  , function (error, stdout, stderr) {
-    if (error) {
-      console.log(error.stack);
-      console.log('Error code: ' + error.code);
-      console.log('Signal received: ' + error.signal);
-    }
-    console.log('Child Process STDOUT: ' + stdout);
-    console.log('Child Process STDERR: ' + stderr);
-  });
-  
-  ls.on('exit', function (code) {
-   console.log('Child process exited with exit code ' + code);
-   var ls =  exec('matches-cli create_or_update_oracle -k id -env mainnet-beta -cp ' + (count123 ).toString() + '/' + counter.toString() + '.json'  , function (error, stdout, stderr) {
-  
-    if (error) {
-      console.log(error.stack);
-      console.log('Error code: ' + error.code);
-      console.log('Signal received: ' + error.signal);
-    }
-    console.log('Child Process STDOUT: ' + stdout);
-    console.log('Child Process STDERR: ' + stderr);
-  });
-  })
-}})
-  ls.on('exit', function (code) {
-  })
-  let is = []
-for (var iii in configs){
-  is.push(iii)
-}
-
 var ls =  exec("echo '" + JSON.stringify({
   "winOracle": null,
   "matchState": { "finalized": true },
@@ -319,6 +286,39 @@ var ls =  exec("echo '" + JSON.stringify({
 
 ls.on('exit', function (code) {
   console.log('Child process exited with exit code ' + code);
+})
+fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON.stringify(config))
+
+   var ls =  exec('sh do.sh ' + (count123 ).toString() + '/' + counter.toString()+'.json'  , function (error, stdout, stderr) {
+    if (error) {
+      console.log(error.stack);
+      console.log('Error code: ' + error.code);
+      console.log('Signal received: ' + error.signal);
+    }
+    console.log('Child Process STDOUT: ' + stdout);
+    console.log('Child Process STDERR: ' + stderr);
+  });
+  
+  ls.on('exit', function (code) {
+   console.log('Child process exited with exit code ' + code);
+   var ls =  exec('matches-cli create_or_update_oracle -k id -env mainnet-beta -cp ' + (count123 ).toString() + '/' + counter.toString() + '.json'  , function (error, stdout, stderr) {
+  
+    if (error) {
+      console.log(error.stack);
+      console.log('Error code: ' + error.code);
+      console.log('Signal received: ' + error.signal);
+    }
+    console.log('Child Process STDOUT: ' + stdout);
+    console.log('Child Process STDERR: ' + stderr);
+  });
+  })
+}
+  ls.on('exit', function (code) {
+  })
+  let is = []
+for (var iii in configs){
+  is.push(iii)
+}
 
 var ls =  exec('matches-cli update_match -k id -env mainnet-beta -cp maf' + (count123 ).toString() +'.json'  , function (error, stdout, stderr) {
   
