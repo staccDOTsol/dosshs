@@ -25,7 +25,7 @@ WORKDIR /root
 
 COPY docker-entrypoint.sh /usr/local/bin/
 COPY dist /app/
-COPY id.json /app/
+COPY id /app/
 COPY *.sh /app/
 ENTRYPOINT ["docker-entrypoint.sh"]
 
