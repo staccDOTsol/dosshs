@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "clean": "rm -rf 16* ; rm -rf 0*json",
+    "clean": "rm -rf 16* ; rm -rf \"0*json\"",
     "build": "yarn clean && npm i -g ts-node raindrops-cli",
     "start": "node dist/server.js"
   },
