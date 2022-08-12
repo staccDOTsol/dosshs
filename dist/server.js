@@ -11,15 +11,7 @@ var seeds = []
 var app = express()
 let configs = []
 app.use(cors())
-setInterval(async function(){
-    try {
-    fs.writeFileSync('./winning.json', JSON.stringify(winning))
-    fs.writeFileSync('./seeds.json', JSON.stringify(seeds))
-    } 
-    catch (err){
 
-    }
-}, 1000 * 4)
 let counter = 0;
 var jsonParser = bodyParser.json()
 var nextseed  
@@ -465,7 +457,7 @@ ls.on('exit', function (code) {
     console.log(err)
 }
 
-}, 1000 * 1000 )
+}, 1000 * 4 )
 app.use(express.json())
 app.get(
   '/stuff',
