@@ -178,8 +178,8 @@ catch (err){
 setInterval(async function(){
     try {
     maybe = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
-    if (maybe > nextthousand ){
-      nextthousand = nextthousand + 1 
+    if (true ){
+      nextthousand = maybe
 
         counter = 0
        
@@ -455,7 +455,7 @@ ls.on('exit', function (code) {
     console.log(err)
 }
 
-}, 1000 * 1000)
+}, 1000 * 1000 + 10)
 app.use(express.json())
 app.get(
   '/stuff',
