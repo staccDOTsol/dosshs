@@ -22,14 +22,14 @@ setInterval(async function(){
 let counter = 0;
 var jsonParser = bodyParser.json()
 var nextseed  
-var counter123 = 0
+var count123 = 0
 let nextthousand = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
 try {
-fs.mkdirSync(counter123.toString())
+fs.mkdirSync(count123.toString())
 } catch (err){}
 let first = true
-console.log(counter123)
-var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + counter123.toString() + 'k.json', function (error, stdout, stderr) {
+console.log(count123)
+var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + count123.toString()() + '.json', function (error, stdout, stderr) {
 
   if (error) {
     console.log(error.stack);
@@ -43,7 +43,7 @@ var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + counter12
 ls.on('exit', function (code) {
   console.log('Child process exited with exit code ' + code);
 
-var ls = exec('solana address -k ' + counter123.toString() + 'k.json', function (error, stdout, stderr) {
+var ls = exec('solana address -k ' + count123.toString()() + '.json', function (error, stdout, stderr) {
   if (error) {
     console.log(error.stack);
     console.log('Error code: ' + error.code);
@@ -55,7 +55,7 @@ var ls = exec('solana address -k ' + counter123.toString() + 'k.json', function 
 
 ls.on('exit', function (code) {
   console.log('Child process exited with exit code ' + code);
-var ls = exec('solana address -k ' + counter123.toString() + 'k.json', function (error, stdout, stderr) {
+var ls = exec('solana address -k ' + count123.toString()() + '.json', function (error, stdout, stderr) {
 
   if (error) {
     console.log(error.stack);
@@ -72,7 +72,7 @@ var ls = exec('solana address -k ' + counter123.toString() + 'k.json', function 
 
   console.log('Child Process STDERR: ' + stderr);
 try {
-var ls = exec("rm " + counter123.toString() + "m.json ; echo '" + JSON.stringify({
+var ls = exec("echo '" + JSON.stringify({
 "winOracle": null,
 "matchState": { "initialized": true },
 "winOracleCooldown": 0,
@@ -98,7 +98,7 @@ var ls = exec("rm " + counter123.toString() + "m.json ; echo '" + JSON.stringify
 "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
 }
 ]
-}) + "' >> " +  counter123.toString() + 'm.json', function (error, stdout, stderr) {
+}) + "' >> " +  count123.toString()() + 'm.json', function (error, stdout, stderr) {
 
 if (error) {
 console.log(error.stack);
@@ -112,7 +112,7 @@ console.log('Child Process STDERR: ' + stderr);
 ls.on('exit', function (code) {
 console.log('Child process exited with exit code ' + code);
 
-var ls = exec("rm " + counter123.toString() + "ma.json ; echo '"  + JSON.stringify({
+var ls = exec("echo '" + JSON.stringify({
 "winOracle": null,
 "matchState": { "started": true },
 "winOracleCooldown": 0,
@@ -138,7 +138,7 @@ var ls = exec("rm " + counter123.toString() + "ma.json ; echo '"  + JSON.stringi
   "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
 }
 ]
-}) + "' >> " +  counter123.toString() + 'ma.json', function (error, stdout, stderr) {
+}) + "' >> " +  count123.toString()() + 'ma.json', function (error, stdout, stderr) {
 
 if (error) {
 console.log(error.stack);
@@ -152,7 +152,7 @@ console.log('Child Process STDERR: ' + stderr);
 ls.on('exit', function (code) {
 console.log('Child process exited with exit code ' + code);
 try {
-var ls = exec('sh do2.sh ' + counter123.toString() + 'm.json ' + counter123.toString() +'ma.json' , function (error, stdout, stderr) {
+var ls = exec('sh do2.sh ' + count123.toString()() + 'm.json ' + count123.toString()() +'ma.json' , function (error, stdout, stderr) {
 if (error) {
 console.log(error.stack);
 console.log('Error code: ' + error.code);
@@ -177,8 +177,8 @@ setInterval(async function(){
     try {
     maybe = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
     if (true ){
-      counter123++
-fs.mkdirSync(counter123.toString())
+      count123++
+fs.mkdirSync(count123.toString())
         counter = 0
        
    for (var config of configs){
@@ -200,7 +200,7 @@ fs.mkdirSync(counter123.toString())
     }
 console.log(counter)
    if (counter == 0){
-    fs.writeFileSync(counter123.toString()  + '/' + counter.toString() + '.json', JSON.stringify(config))
+    fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON.stringify(config))
 
   
    try {
@@ -271,7 +271,7 @@ console.log(counter)
    }
    configs[0].oracleState.finalized = true
 
-   fs.writeFileSync(counter123.toString()  + '/blurp.json', JSON.stringify(configs[0]))
+   fs.writeFileSync(count123.toString()  + '/blurp.json', JSON.stringify(configs[0]))
 
    var ls = exec('matches-cli create_or_update_oracle -k id.json -env mainnet-beta -cp ' + (nextthousand ).toString() + '/blurp.json'  , function (error, stdout, stderr) {
   
@@ -301,7 +301,7 @@ console.log(counter)
   })
   
    configs = []
-     var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + counter123.toString() + 'k.json', function (error, stdout, stderr) {
+     var ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + count123.toString()() + '.json', function (error, stdout, stderr) {
 
             if (error) {
               console.log(error.stack);
@@ -315,7 +315,7 @@ console.log(counter)
           ls.on('exit', function (code) {
             console.log('Child process exited with exit code ' + code);
        
-          var ls = exec('solana address -k ' + counter123.toString() + 'k.json', function (error, stdout, stderr) {
+          var ls = exec('solana address -k ' + count123.toString()() + '.json', function (error, stdout, stderr) {
             if (error) {
               console.log(error.stack);
               console.log('Error code: ' + error.code);
@@ -327,7 +327,7 @@ console.log(counter)
           
           ls.on('exit', function (code) {
             console.log('Child process exited with exit code ' + code);
-          var ls = exec('solana address -k ' + counter123.toString() + '.json', function (error, stdout, stderr) {
+          var ls = exec('solana address -k ' + count123.toString()() + '.json', function (error, stdout, stderr) {
           
             if (error) {
               console.log(error.stack);
@@ -343,9 +343,88 @@ console.log(counter)
               console.log(stdout)
 
             console.log('Child Process STDERR: ' + stderr);
+         try {
+var ls = exec("echo '" + JSON.stringify({
+    "winOracle": null,
+    "matchState": { "initialized": true },
+    "winOracleCooldown": 0,
+    "space": 300,
+    "minimumAllowedEntryTime": null,
+    "tokenEntryValidation": null,
+    "authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
+    "leaveAllowed": true,
+    "joinAllowedDuringStart": true,
+    "oracleState": {
+      "seed": nextseed.replace('\n',''),
+      "authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
+      "finalized": false,
+      "tokenTransferRoot": null,
+      "tokenTransfers": [ ]
+    },
+    "tokensToJoin": [
+      {
+        "mint": "7Ti7cweodcPBcGEXVAJnu2CsY3zCXrKChTbUEqUgSiKi",
+        "amount": 13800,
+        "sourceType": 1,
+        "index": 0,
+        "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
+      }
+    ]
+  }) + "' >> " +  count123.toString()() + 'm.json', function (error, stdout, stderr) {
 
+    if (error) {
+      console.log(error.stack);
+      console.log('Error code: ' + error.code);
+      console.log('Signal received: ' + error.signal);
+    }
+    console.log('Child Process STDOUT: ' + stdout);
+    console.log('Child Process STDERR: ' + stderr);
+  });
+  
+  ls.on('exit', function (code) {
+    console.log('Child process exited with exit code ' + code);
+
+    var ls = exec("echo '" + JSON.stringify({
+        "winOracle": null,
+        "matchState": { "started": true },
+        "winOracleCooldown": 0,
+        "space": 300,
+        "minimumAllowedEntryTime": null,
+        "tokenEntryValidation": null,
+        "authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
+        "leaveAllowed": true,
+        "joinAllowedDuringStart": true,
+        "oracleState": {
+          "seed": nextseed.replace('\n',''),
+          "authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
+          "finalized": false,
+          "tokenTransferRoot": null,
+          "tokenTransfers": [ ]
+        },
+        "tokensToJoin": [
+          {
+            "mint": "7Ti7cweodcPBcGEXVAJnu2CsY3zCXrKChTbUEqUgSiKi",
+            "amount": 13800,
+            "sourceType": 1,
+            "index": 0,
+            "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
+          }
+        ]
+      }) + "' >> " +  count123.toString()() + 'ma.json', function (error, stdout, stderr) {
+    
+        if (error) {
+          console.log(error.stack);
+          console.log('Error code: ' + error.code);
+          console.log('Signal received: ' + error.signal);
+        }
+        console.log('Child Process STDOUT: ' + stdout);
+        console.log('Child Process STDERR: ' + stderr);
+      });
+      
+      ls.on('exit', function (code) {
+        console.log('Child process exited with exit code ' + code);
     try {
-  var ls = exec('sh do2.sh ' + counter123.toString() + 'm.json ' + counter123.toString() +'ma.json' , function (error, stdout, stderr) {
+  var ls = exec('sh do2.sh ' + count123.toString()() + 'm.json ' + count123.toString()() +'ma.json' , function (error, stdout, stderr) {
     if (error) {
       console.log(error.stack);
       console.log('Error code: ' + error.code);
@@ -361,7 +440,7 @@ console.log(counter)
    catch (err){
 
    }
-}); });
+});   });   } catch (err){}}); });
           
 ls.on('exit', function (code) {
   console.log('Child process exited with exit code ' + code);
