@@ -25,7 +25,9 @@ var nextseed
 let nextthousand = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
 try {
 fs.mkdirSync(nextthousand.toString())
-} catch (err){}
+} catch (err){}try {
+  fs.mkdirSync((nextthousand + 1).toString())
+  } catch (err){}
 let first = true
 console.log(nextthousand)
 let ls = exec('solana-keygen new --no-bip39-passphrase --force   -o' + (nextthousand).toString() + '.json', function (error, stdout, stderr) {
