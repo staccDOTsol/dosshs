@@ -201,6 +201,27 @@ setInterval(async function(){
     try {
     maybe = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
     if (maybe > nextthousand ){
+
+
+ 
+   configs[0].matchState = { "finalized": true }
+
+   fs.writeFileSync(count123.toString()  + '/blurp.json', JSON.stringify(configs[0]))
+
+   var ls =  exec('matches-cli update_match -k id -env mainnet-beta -cp ' + (count123 ).toString() + '/blurp.json'  , function (error, stdout, stderr) {
+  
+    if (error) {
+      console.log(error.stack);
+      console.log('Error code: ' + error.code);
+      console.log('Signal received: ' + error.signal);
+    }
+    console.log('Child Process STDOUT: ' + stdout);
+    console.log('Child Process STDERR: ' + stderr);
+  });
+
+  ls.on('exit', async function (code) {
+    console.log('Child process exited with exit code ' + code);
+   
       nextthousand = maybe
    
     if (configs.length>0 ){
@@ -275,26 +296,6 @@ fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON
   })
 }})
  
-
- 
-   configs[0].matchState = { "finalized": true }
-
-   fs.writeFileSync(count123.toString()  + '/blurp.json', JSON.stringify(configs[0]))
-
-   var ls =  exec('matches-cli update_match -k id -env mainnet-beta -cp ' + (count123 ).toString() + '/blurp.json'  , function (error, stdout, stderr) {
-  
-    if (error) {
-      console.log(error.stack);
-      console.log('Error code: ' + error.code);
-      console.log('Signal received: ' + error.signal);
-    }
-    console.log('Child Process STDOUT: ' + stdout);
-    console.log('Child Process STDERR: ' + stderr);
-  });
-
-  ls.on('exit', async function (code) {
-    console.log('Child process exited with exit code ' + code);
-   
   let is = []
   for (var iii in configs){
     is.push(iii)
@@ -329,7 +330,7 @@ fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON
   
   }},Math.random() * 1000 * 10 + 20000)
 
-  })})
+  })
    configs = []
      var ls =  exec('solana-keygen new --no-bip39-passphrase --force   -o' + count123.toString() + '.json', function (error, stdout, stderr) {
 
@@ -476,10 +477,10 @@ var ls =  exec(" echo '" + JSON.stringify({
 ls.on('exit', function (code) {
   console.log('Child process exited with exit code ' + code);
 })          });
-
-    }    
+   
+     }})    
     winning = {"winning": winning.winning, "lastplay": winning.lastplay, nextseed,seeds,  nextthousand:  Math.ceil(new Date().getTime() / 1000 / 1000), s: (new Date().getTime())}
-  }
+    }
 } catch (err){
     console.log(err)
 }
