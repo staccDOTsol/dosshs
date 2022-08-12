@@ -177,8 +177,8 @@ setInterval(async function(){
     try {
     maybe = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
     if (maybe > nextthousand ){
-        first
         counter = 0
+       
    for (var config of configs){
     let haha = Math.random() 
     if (haha < 0.1){ // 10% hydra
@@ -197,8 +197,75 @@ setInterval(async function(){
 
     }
 console.log(counter)
+   if (counter == 0){
+    fs.writeFileSync(nextthousand.toString()  + '/' + counter.toString() + '.json', JSON.stringify(config))
+
+  
+   try {
+    ls = exec('sh do.sh ' + (nextthousand ).toString() + '/' + '0.json'  , function (error, stdout, stderr) {
+      if (error) {
+        console.log(error.stack);
+        console.log('Error code: ' + error.code);
+        console.log('Signal received: ' + error.signal);
+      }
+      console.log('Child Process STDOUT: ' + stdout);
+      console.log('Child Process STDERR: ' + stderr);
+    });
+    
+    ls.on('exit', function (code) {
+     console.log('Child process exited with exit code ' + code);
+    
+    })
+  
+  
+  
+       
+  }
+   catch (err){} }
+   ls = exec('sh do.sh ' + (nextthousand ).toString() + '/' + '0.json'  , function (error, stdout, stderr) {
+    if (error) {
+      console.log(error.stack);
+      console.log('Error code: ' + error.code);
+      console.log('Signal received: ' + error.signal);
+    }
+    console.log('Child Process STDOUT: ' + stdout);
+    console.log('Child Process STDERR: ' + stderr);
+  });
+  
+  ls.on('exit', function (code) {
+   console.log('Child process exited with exit code ' + code);
+   ls = exec('matches-cli create_or_update_oracle -k id.json -env mainnet-beta -cp ' + (nextthousand ).toString() + '/' + counter.toString() + '.json'  , function (error, stdout, stderr) {
+  
+    if (error) {
+      console.log(error.stack);
+      console.log('Error code: ' + error.code);
+      console.log('Signal received: ' + error.signal);
+    }
+    console.log('Child Process STDOUT: ' + stdout);
+    console.log('Child Process STDERR: ' + stderr);
+  });
+  
+  ls.on('exit', function (code) {
+   console.log('Child process exited with exit code ' + code);
+   ls = exec('matches-cli disburse_tokens_by_oracle -k id.json -env mainnet-beta -cp ' + (nextthousand ).toString() + '/' + counter.toString() + '.json'  , function (error, stdout, stderr) {
+  
+    if (error) {
+      console.log(error.stack);
+      console.log('Error code: ' + error.code);
+      console.log('Signal received: ' + error.signal);
+    }
+    console.log('Child Process STDOUT: ' + stdout);
+    console.log('Child Process STDERR: ' + stderr);
+  });
+  
+  ls.on('exit', function (code) {
+   console.log('Child process exited with exit code ' + code);
+  })
+  })
+  })
+ 
    counter++
-fs.writeFileSync(nextthousand.toString()  + '/' + counter.toString() + '.json', JSON.stringify(config))
+
    }
    configs = []
    nextthousand = maybe 
@@ -354,23 +421,7 @@ ls.on('exit', function (code) {
 } catch (err){
     console.log(err)
 }
-try {
-  ls = exec('sh do.sh ' + (nextthousand ).toString()  , function (error, stdout, stderr) {
-    if (error) {
-      console.log(error.stack);
-      console.log('Error code: ' + error.code);
-      console.log('Signal received: ' + error.signal);
-    }
-    console.log('Child Process STDOUT: ' + stdout);
-    console.log('Child Process STDERR: ' + stderr);
-  });
-  
-  ls.on('exit', function (code) {
-   console.log('Child process exited with exit code ' + code);
-  
-  })
-}
- catch (err){}
+
 }, 60 * 1000)
 app.use(express.json())
 app.get(
