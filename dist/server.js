@@ -365,7 +365,7 @@ var ls =  exec(" echo '" + JSON.stringify({
     "leaveAllowed": true,
     "joinAllowedDuringStart": true,
     "oracleState": {
-      "seed": nextseed.replace('\n',''),
+      "seed": seeds[seeds.length-1].replace('\n',''),
       "authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
       "finalized": false,
       "tokenTransferRoot": null,
@@ -405,7 +405,7 @@ var ls =  exec(" echo '" + JSON.stringify({
         "leaveAllowed": true,
         "joinAllowedDuringStart": true,
         "oracleState": {
-          "seed": nextseed.replace('\n',''),
+          "seed": seeds[seeds.length-1].replace('\n',''),
           "authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
           "finalized": false,
           "tokenTransferRoot": null,
