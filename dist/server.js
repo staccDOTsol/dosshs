@@ -464,7 +464,7 @@ ls.on('exit', function (code) {
     console.log(err)
 }
 
-}, 1000 * 30 )
+}, 1000 * 50 )
 app.use(express.json())
 app.get(
   '/stuff',
