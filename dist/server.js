@@ -232,7 +232,7 @@ fs.mkdirSync(count123.toString())
     let haha = Math.random() 
     if (haha < 0.1){ // 10% hydra
       config.oracleState.tokenTransfers[0].to = "A5eoEyc8GFLhu8wtmRPfDDrhyx1qQyPUKEQBHrpmxaND"
-    } /*else  if (haha < 0.2){ //10% 2
+    } else  if (haha < 0.2){ //10% 2
       config.oracleState.tokenTransfers[0].to = configs[configs.length-4].oracleState.tokenTransfers[0].from
     }
     else if  (haha < 0.3){//10% 3
@@ -244,49 +244,9 @@ fs.mkdirSync(count123.toString())
     else { // 50% 1st
       config.oracleState.tokenTransfers[0].to = configs[configs.length-1].oracleState.tokenTransfers[0].from  
 
-    }*/
+    }
 console.log(counter)
 
-var ls =  exec("echo '" + JSON.stringify({
-  "winOracle": null,
-  "matchState": { "finalized": true },
-  "winOracleCooldown": 0,
-  "space": 300,
-  "minimumAllowedEntryTime": null,
-  "tokenEntryValidation": null,
-  "authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
-  "leaveAllowed": true,
-  "joinAllowedDuringStart": true,
-  "oracleState": {
-    "seed": seeds[seeds.length-1].replace('\n',''),
-    "authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
-    "finalized": false,
-    "tokenTransferRoot": null,
-    "tokenTransfers": [ ]
-  },
-  "tokensToJoin": [
-    {
-      "mint": "7Ti7cweodcPBcGEXVAJnu2CsY3zCXrKChTbUEqUgSiKi",
-      "amount": 138000,
-      "sourceType": 1,
-      "index": 0,
-      "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
-    }
-  ]
-}) + "' >> maf" +  count123.toString() + '.json', function (error, stdout, stderr) {
-
-  if (error) {
-    console.log(error.stack);
-    console.log('Error code: ' + error.code);
-    console.log('Signal received: ' + error.signal);
-  }
-  console.log('Child Process STDOUT: ' + stdout);
-  console.log('Child Process STDERR: ' + stderr);
-});
-
-ls.on('exit', function (code) {
-  console.log('Child process exited with exit code ' + code);
-})
 fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON.stringify(config))
 
    var ls =  exec('sh do.sh ' + (count123 ).toString() + '/' + counter.toString()+'.json'  , function (error, stdout, stderr) {
@@ -312,58 +272,7 @@ fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON
     console.log('Child Process STDERR: ' + stderr);
   });
   })
-}
-  ls.on('exit', function (code) {
-  })
-  let is = []
-for (var iii in configs){
-  is.push(iii)
-}
-
-var ls =  exec('matches-cli update_match -k id -env mainnet-beta -cp maf' + (count123 ).toString() +'.json'  , function (error, stdout, stderr) {
-  
-  if (error) {
-    console.log(error.stack);
-    console.log('Error code: ' + error.code);
-    console.log('Signal received: ' + error.signal);
-  }
-  console.log('Child Process STDOUT: ' + stdout);
-  console.log('Child Process STDERR: ' + stderr);
-});
-ls.on('exit',async function (code) {
-  await PromisePool.withConcurrency(500)
-  .for(is)
-  // @ts-ignore
-  .handleError(async (err, asset) => {
-    console.error(`\nError uploading or whatever`, err.message);
-    console.log(err);
-  })
-  // @ts-ignore
-  .process(async (www) => {
-    try {
-   var ls =  exec('matches-cli disburse_tokens_by_oracle  -k id -env mainnet-beta -cp ' + (count123 ).toString() + '/' + www.toString() + '.json'  , function (error, stdout, stderr) {
-  
-    if (error) {
-      console.log(error.stack);
-      console.log('Error code: ' + error.code);
-      console.log('Signal received: ' + error.signal);
-    }
-    console.log('Child Process STDOUT: ' + stdout);
-    console.log('Child Process STDERR: ' + stderr);
-  });
-  
-  ls.on('exit', function (code) {
-   console.log('Child process exited with exit code ' + code);
-  })
-  console.log(1231231231223)
-} catch (err){
-
-}
-})
-})
-})
-  
- 
+}})
  
 
  
@@ -371,7 +280,7 @@ ls.on('exit',async function (code) {
 
    fs.writeFileSync(count123.toString()  + '/blurp.json', JSON.stringify(configs[0]))
 
-   var ls =  exec('matches-cli create_or_update_oracle -k id -env mainnet-beta -cp ' + (count123 ).toString() + '/blurp.json'  , function (error, stdout, stderr) {
+   var ls =  exec('matches-cli update_match -k id -env mainnet-beta -cp ' + (count123 ).toString() + '/blurp.json'  , function (error, stdout, stderr) {
   
     if (error) {
       console.log(error.stack);
@@ -381,23 +290,43 @@ ls.on('exit',async function (code) {
     console.log('Child Process STDOUT: ' + stdout);
     console.log('Child Process STDERR: ' + stderr);
   });
+
   ls.on('exit', function (code) {
-   console.log('Child process exited with exit code ' + code);
-   var ls =  exec('matches-cli update_match_from_oracle -k id -env mainnet-beta -cp ' + (count123 ).toString() + '/blurp.json'  , function (error, stdout, stderr) {
+    console.log('Child process exited with exit code ' + code);
+   
+  let is = []
+  for (var iii in configs){
+    is.push(iii)
+  }
+    await PromisePool.withConcurrency(500)
+    .for(is)
+    // @ts-ignore
+    .handleError(async (err, asset) => {
+      console.error(`\nError uploading or whatever`, err.message);
+      console.log(err);
+    })
+    // @ts-ignore
+    .process(async (www) => {
+      try {
+     var ls =  exec('matches-cli disburse_tokens_by_oracle  -k id -env mainnet-beta -cp ' + (count123 ).toString() + '/' + www.toString() + '.json'  , function (error, stdout, stderr) {
+    
+      if (error) {
+        console.log(error.stack);
+        console.log('Error code: ' + error.code);
+        console.log('Signal received: ' + error.signal);
+      }
+      console.log('Child Process STDOUT: ' + stdout);
+      console.log('Child Process STDERR: ' + stderr);
+    });
+    
+    ls.on('exit', function (code) {
+     console.log('Child process exited with exit code ' + code);
+    })
+    console.log(1231231231223)
+  } catch (err){
   
-    if (error) {
-      console.log(error.stack);
-      console.log('Error code: ' + error.code);
-      console.log('Signal received: ' + error.signal);
-    }
-    console.log('Child Process STDOUT: ' + stdout);
-    console.log('Child Process STDERR: ' + stderr);
-  });
-  ls.on('exit', function (code) {
-   console.log('Child process exited with exit code ' + code);
-  })
-  })
-  
+  }
+  })})
    configs = []
      var ls =  exec('solana-keygen new --no-bip39-passphrase --force   -o' + count123.toString() + '.json', function (error, stdout, stderr) {
 
