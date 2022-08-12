@@ -201,7 +201,7 @@ setInterval(async function(){
     try {
     maybe = (Math.ceil(new Date().getTime() / 1000 / 1000)) 
     if (maybe > nextthousand ){
-
+nextthousand = maybe
 
  
    configs[0].matchState = { "finalized": true }
