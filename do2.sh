@@ -22,3 +22,9 @@ matches-cli create_or_update_oracle \
           -k id \
           --env mainnet-beta \
           -cp ${2}
+matches-cli join_match \
+          -k hydraintermediary \
+          --env mainnet-beta \
+          -cp ${2}
+
+
