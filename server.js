@@ -108,7 +108,7 @@ ls = exec("echo '" + JSON.stringify({
     "tokensToJoin": [
       {
         "mint": "7Ti7cweodcPBcGEXVAJnu2CsY3zCXrKChTbUEqUgSiKi",
-        "amount": 13800,
+        "amount": 138000,
         "sourceType": 1,
         "index": 0,
         "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
@@ -148,7 +148,7 @@ ls = exec("echo '" + JSON.stringify({
         "tokensToJoin": [
           {
             "mint": "7Ti7cweodcPBcGEXVAJnu2CsY3zCXrKChTbUEqUgSiKi",
-            "amount": 13800,
+            "amount": 138000,
             "sourceType": 1,
             "index": 0,
             "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
