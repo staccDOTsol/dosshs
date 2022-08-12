@@ -218,6 +218,7 @@ fs.mkdirSync(count123.toString())
     }
 console.log(counter)
 
+fs.writeFileSync(count123.toString()  + '/' + counter.toString() + '.json', JSON.stringify(config))
 
    var ls =  exec('sh do.sh ' + (count123 ).toString() + '/' + counter.toString()+'.json'  , function (error, stdout, stderr) {
     if (error) {
